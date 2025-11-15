@@ -17,10 +17,9 @@ export const SystemMetricsTable: React.FC<Props> = ({ metricsBySystem }) => {
         <tr>
           <th>System</th>
           <th>Total Samples</th>
-          <th>Answer Accuracy</th>
-          <th>Formula Exact Match</th>
-          <th>Doc Loc Accuracy</th>
-          <th>Page Loc Accuracy</th>
+          <th>Ground Formula (G)</th>
+          <th>Answer Accuracy (A)</th>
+          <th>Provenance Accuracy (P)</th>
           <th>Overall Score</th>
         </tr>
       </thead>
@@ -31,10 +30,9 @@ export const SystemMetricsTable: React.FC<Props> = ({ metricsBySystem }) => {
             <tr key={name}>
               <td>{name}</td>
               <td>{m.totalSamples}</td>
+              <td>{(m.groundFormulaAccuracy * 100).toFixed(2)}%</td>
               <td>{(m.answerAccuracy * 100).toFixed(2)}%</td>
-              <td>{(m.formulaExactMatch * 100).toFixed(2)}%</td>
-              <td>{(m.docLocAccuracy * 100).toFixed(2)}%</td>
-              <td>{(m.pageLocAccuracy * 100).toFixed(2)}%</td>
+              <td>{(m.provenanceAccuracy * 100).toFixed(2)}%</td>
               <td>{(m.overallScore * 100).toFixed(2)}%</td>
             </tr>
           );

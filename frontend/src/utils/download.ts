@@ -1,3 +1,4 @@
+// src/utils/download.ts
 import type { GapMetrics } from "../types/gap";
 
 function triggerDownload(blob: Blob, filename: string) {
@@ -9,13 +10,19 @@ function triggerDownload(blob: Blob, filename: string) {
   URL.revokeObjectURL(url);
 }
 
-export function downloadJsonReport(report: unknown, filename = "gap-report.json") {
+export function downloadJsonReport(
+  report: unknown,
+  filename = "gap-report.json"
+) {
   const blob = new Blob([JSON.stringify(report, null, 2)], {
     type: "application/json",
   });
   triggerDownload(blob, filename);
 }
 
+/**
+ * 导出包含 G/A/P 与 overall 的 CSV 汇总
+ */
 export function downloadCsvFromMetrics(
   metricsBySystem: Record<string, GapMetrics>,
   filename = "gap-metrics.csv"
@@ -23,10 +30,9 @@ export function downloadCsvFromMetrics(
   const headers = [
     "system_name",
     "total_samples",
-    "answer_accuracy",
-    "formula_exact_match",
-    "doc_loc_accuracy",
-    "page_loc_accuracy",
+    "ground_formula_G",
+    "answer_accuracy_A",
+    "provenance_accuracy_P",
     "overall_score",
   ];
 
@@ -36,13 +42,12 @@ export function downloadCsvFromMetrics(
     const row = [
       systemName,
       m.totalSamples,
+      m.groundFormulaAccuracy.toFixed(4),
       m.answerAccuracy.toFixed(4),
-      m.formulaExactMatch.toFixed(4),
-      m.docLocAccuracy.toFixed(4),
-      m.pageLocAccuracy.toFixed(4),
+      m.provenanceAccuracy.toFixed(4),
       m.overallScore.toFixed(4),
     ];
-    lines.push(row.join(","));
+      lines.push(row.join(","));
   }
 
   const csv = lines.join("\n");

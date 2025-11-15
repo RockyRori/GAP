@@ -1,7 +1,6 @@
 # GAP
 GAP System, designed for MRAG-Bench.
-# D
-Directory Structure
+# Directory Structure
 ```
 GAP/
 ├─ README.md                     # 项目介绍、使用说明、论文引用方式

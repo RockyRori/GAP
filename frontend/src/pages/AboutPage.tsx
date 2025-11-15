@@ -6,7 +6,7 @@ export const AboutPage: React.FC = () => {
       <h1>About GAP</h1>
       <p>
         GAP is a browser-only evaluation toolkit designed to assess MRAG systems with 
-        three metrics—Ground Formula(G), Answer Accuracy (A), and Provenance Accuracy (P), 
+        three metrics—Ground Formula(G), Answer Accuracy(A), and Provenance Accuracy(P), 
         plus a weighted overall score.
       </p>
       <p>

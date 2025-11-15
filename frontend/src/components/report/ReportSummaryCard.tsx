@@ -19,16 +19,14 @@ export const ReportSummaryCard: React.FC<Props> = ({ metricsBySystem }) => {
           const m = metricsBySystem[name];
           return (
             <li key={name}>
-              <strong>{name}</strong>: Overall {(
-                m.overallScore * 100
-              ).toFixed(2)}
-              % (Answer {(
-                m.answerAccuracy * 100
-              ).toFixed(2)}
-              %, Formula {(
-                m.formulaExactMatch * 100
-              ).toFixed(2)}
-              %)
+              <strong>{name}</strong>: Overall{" "}
+              {(m.overallScore * 100).toFixed(2)}%
+              {"  |  "}
+              G: {(m.groundFormulaAccuracy * 100).toFixed(2)}%
+              {"  |  "}
+              A: {(m.answerAccuracy * 100).toFixed(2)}%
+              {"  |  "}
+              P: {(m.provenanceAccuracy * 100).toFixed(2)}%
             </li>
           );
         })}
