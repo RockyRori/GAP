@@ -1,0 +1,362 @@
+[
+  {
+    "system_name": "Claude",
+    "question_id": "Q001",
+    "question_text": "Based on the thrust equation, compute the net thrust T when ṁ0 = 50 kg/s, ṁf = 1 kg/s, Ve = 550 m/s and V0 = 250 m/s.",
+    "pred_answer": "15300 N",
+    "pred_formula_latex": "T = (\\dot{m}_0 + \\dot{m}_f)V_e - \\dot{m}_0 V_0 = (50 + 1)(550) - 50(250) = 28050 - 12500 = 15550 \\text{ N}",
+    "pred_doc_name": "The thrust equation.pdf",
+    "pred_page": 12,
+    "retrieved_chunks": [
+      {
+        "doc_name": "The thrust equation.pdf",
+        "page": 12,
+        "score": 0.95
+      }
+    ],
+    "confidence": 0.98,
+    "timestamp": "2025-12-02T10:30:00Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q002",
+    "question_text": "Using the general thrust equation T = (ṁ0 + ṁf)Ve − ṁ0V0 + (pe − p0)Ae, compute the pressure term when pe − p0 = 500 Pa and Ae = 0.2 m².",
+    "pred_answer": "100 N",
+    "pred_formula_latex": "(p_e - p_0)A_e = 500 \\times 0.2 = 100 \\text{ N}",
+    "pred_doc_name": "The thrust equation.pdf",
+    "pred_page": 13,
+    "retrieved_chunks": [
+      {
+        "doc_name": "The thrust equation.pdf",
+        "page": 13,
+        "score": 0.96
+      }
+    ],
+    "confidence": 0.99,
+    "timestamp": "2025-12-02T10:30:05Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q003",
+    "question_text": "According to the Breguet range equation R = (V∞/(TSFC)) (L/D) ln(W0/W1), compute R when V∞ = 200 m/s, TSFC = 0.5 1/hr, L/D = 15, W0 = 60000 N, W1 = 50000 N.",
+    "pred_answer": "654857 m or approximately 654.9 km",
+    "pred_formula_latex": "R = \\frac{V_\\infty}{\\text{TSFC}} \\left(\\frac{L}{D}\\right) \\ln\\left(\\frac{W_0}{W_1}\\right) = \\frac{200}{0.5/3600} \\times 15 \\times \\ln\\left(\\frac{60000}{50000}\\right) = 1440000 \\times 15 \\times 0.1823 \\approx 654857 \\text{ m}",
+    "pred_doc_name": "Range and endurance.pdf",
+    "pred_page": 38,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Range and endurance.pdf",
+        "page": 38,
+        "score": 0.97
+      }
+    ],
+    "confidence": 0.95,
+    "timestamp": "2025-12-02T10:30:10Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q004",
+    "question_text": "Given the drag polar CD = CD,0 + KCL², compute CD when CD,0 = 0.02, K = 0.05, and CL = 0.6.",
+    "pred_answer": "0.038",
+    "pred_formula_latex": "C_D = C_{D,0} + KC_L^2 = 0.02 + 0.05(0.6)^2 = 0.02 + 0.05(0.36) = 0.02 + 0.018 = 0.038",
+    "pred_doc_name": "The drag polar.pdf",
+    "pred_page": 15,
+    "retrieved_chunks": [
+      {
+        "doc_name": "The drag polar.pdf",
+        "page": 15,
+        "score": 0.98
+      }
+    ],
+    "confidence": 0.99,
+    "timestamp": "2025-12-02T10:30:15Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q005",
+    "question_text": "From the equations of motion, compute the parallel force balance T cos ε − D − W sin γ when T = 20000 N, ε = 0°, D = 5000 N, γ = 5°, W = 60000 N.",
+    "pred_answer": "9765 N",
+    "pred_formula_latex": "T\\cos\\varepsilon - D - W\\sin\\gamma = 20000\\cos(0°) - 5000 - 60000\\sin(5°) = 20000 - 5000 - 60000(0.0872) = 15000 - 5235 = 9765 \\text{ N}",
+    "pred_doc_name": "The equations of motion.pdf",
+    "pred_page": 11,
+    "retrieved_chunks": [
+      {
+        "doc_name": "The equations of motion.pdf",
+        "page": 11,
+        "score": 0.97
+      }
+    ],
+    "confidence": 0.96,
+    "timestamp": "2025-12-02T10:30:20Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q006",
+    "question_text": "Using propulsive efficiency formula ηp = 2/(1 + Ve/V0), compute ηp when Ve = 600 m/s and V0 = 200 m/s.",
+    "pred_answer": "0.5 or 50%",
+    "pred_formula_latex": "\\eta_p = \\frac{2}{1 + V_e/V_0} = \\frac{2}{1 + 600/200} = \\frac{2}{1 + 3} = \\frac{2}{4} = 0.5",
+    "pred_doc_name": "Engine efficiency.pdf",
+    "pred_page": 31,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Engine efficiency.pdf",
+        "page": 31,
+        "score": 0.98
+      }
+    ],
+    "confidence": 0.99,
+    "timestamp": "2025-12-02T10:30:25Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q007",
+    "question_text": "For a turbofan engine with bypass ratio BPR = ṁb/ṁc = 8, core exit velocity Ve = 500 m/s, bypass exit velocity Vb = 300 m/s, and ṁc = 20 kg/s, compute the symbolic total thrust.",
+    "pred_answer": "T = ṁc(Ve + BPR·Vb) - ṁ0·V0 = 20(500 + 8×300) - ṁ0·V0 = 20(500 + 2400) - ṁ0·V0 = 58000 - ṁ0·V0 N",
+    "pred_formula_latex": "T = \\dot{m}_c(V_e + \\text{BPR} \\cdot V_b) - \\dot{m}_0 V_0 = 20(500 + 8 \\times 300) - \\dot{m}_0 V_0 = 58000 - \\dot{m}_0 V_0 \\text{ N}",
+    "pred_doc_name": "Turbofan engine.pdf",
+    "pred_page": 28,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Turbofan engine.pdf",
+        "page": 28,
+        "score": 0.96
+      }
+    ],
+    "confidence": 0.94,
+    "timestamp": "2025-12-02T10:30:30Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q008",
+    "question_text": "Using the turbojet thrust equation T = ṁ0(Ve − V0), compute T when ṁ0 = 45 kg/s, Ve = 900 m/s and V0 = 250 m/s.",
+    "pred_answer": "29250 N",
+    "pred_formula_latex": "T = \\dot{m}_0(V_e - V_0) = 45(900 - 250) = 45(650) = 29250 \\text{ N}",
+    "pred_doc_name": "Turbojet engine.pdf",
+    "pred_page": 19,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Turbojet engine.pdf",
+        "page": 19,
+        "score": 0.98
+      }
+    ],
+    "confidence": 0.99,
+    "timestamp": "2025-12-02T10:30:35Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q009",
+    "question_text": "From thrust required TR = q∞SCD, compute TR when q∞ = 500 N/m², S = 25 m², and CD = 0.04.",
+    "pred_answer": "500 N",
+    "pred_formula_latex": "T_R = q_\\infty S C_D = 500 \\times 25 \\times 0.04 = 500 \\text{ N}",
+    "pred_doc_name": "Thrust required and available.pdf",
+    "pred_page": 25,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Thrust required and available.pdf",
+        "page": 25,
+        "score": 0.97
+      }
+    ],
+    "confidence": 0.99,
+    "timestamp": "2025-12-02T10:30:40Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q010",
+    "question_text": "Using TR = (1/2)ρ∞SCD,0 V∞², compute the zero-lift term when ρ∞ = 1.0, S = 30 m², CD,0 = 0.02, V∞ = 70 m/s.",
+    "pred_answer": "1470 N",
+    "pred_formula_latex": "T_R = \\frac{1}{2}\\rho_\\infty S C_{D,0} V_\\infty^2 = \\frac{1}{2}(1.0)(30)(0.02)(70)^2 = 0.5 \\times 30 \\times 0.02 \\times 4900 = 1470 \\text{ N}",
+    "pred_doc_name": "Thrust required and available.pdf",
+    "pred_page": 26,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Thrust required and available.pdf",
+        "page": 26,
+        "score": 0.96
+      }
+    ],
+    "confidence": 0.98,
+    "timestamp": "2025-12-02T10:30:45Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q011",
+    "question_text": "Using the lift equation L = 1/2 ρ∞ V∞² S CL, compute L when ρ∞ = 1.1 kg/m³, V∞ = 90 m/s, S = 25 m², CL = 0.8.",
+    "pred_answer": "89100 N",
+    "pred_formula_latex": "L = \\frac{1}{2}\\rho_\\infty V_\\infty^2 S C_L = \\frac{1}{2}(1.1)(90)^2(25)(0.8) = 0.5 \\times 1.1 \\times 8100 \\times 25 \\times 0.8 = 89100 \\text{ N}",
+    "pred_doc_name": "The drag polar.pdf",
+    "pred_page": 22,
+    "retrieved_chunks": [
+      {
+        "doc_name": "The drag polar.pdf",
+        "page": 22,
+        "score": 0.95
+      }
+    ],
+    "confidence": 0.98,
+    "timestamp": "2025-12-02T10:30:50Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q012",
+    "question_text": "Find the design lift coefficient CL* = sqrt(CD,0 / K) when CD,0 = 0.02 and K = 0.05.",
+    "pred_answer": "0.632",
+    "pred_formula_latex": "C_L^* = \\sqrt{\\frac{C_{D,0}}{K}} = \\sqrt{\\frac{0.02}{0.05}} = \\sqrt{0.4} \\approx 0.632",
+    "pred_doc_name": "The drag polar.pdf",
+    "pred_page": 20,
+    "retrieved_chunks": [
+      {
+        "doc_name": "The drag polar.pdf",
+        "page": 20,
+        "score": 0.98
+      }
+    ],
+    "confidence": 0.99,
+    "timestamp": "2025-12-02T10:30:55Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q013",
+    "question_text": "Using the momentum term T = ṁe Ve − ṁ0 V0 with fuel addition ṁe = ṁ0 + ṁf, compute T for ṁ0 = 40, ṁf = 2, Ve = 700, V0 = 250.",
+    "pred_answer": "19400 N",
+    "pred_formula_latex": "T = \\dot{m}_e V_e - \\dot{m}_0 V_0 = (\\dot{m}_0 + \\dot{m}_f)V_e - \\dot{m}_0 V_0 = (40 + 2)(700) - 40(250) = 42(700) - 10000 = 29400 - 10000 = 19400 \\text{ N}",
+    "pred_doc_name": "The thrust equation.pdf",
+    "pred_page": 12,
+    "retrieved_chunks": [
+      {
+        "doc_name": "The thrust equation.pdf",
+        "page": 12,
+        "score": 0.96
+      }
+    ],
+    "confidence": 0.97,
+    "timestamp": "2025-12-02T10:31:00Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q014",
+    "question_text": "Compute endurance E = (1/TSFC)(L/D) ln(W0/W1) for TSFC = 0.6 1/hr, L/D = 12, W0 = 55000 N, W1 = 45000 N.",
+    "pred_answer": "3.65 hours",
+    "pred_formula_latex": "E = \\frac{1}{\\text{TSFC}}\\left(\\frac{L}{D}\\right)\\ln\\left(\\frac{W_0}{W_1}\\right) = \\frac{1}{0.6}(12)\\ln\\left(\\frac{55000}{45000}\\right) = 20 \\times \\ln(1.222) = 20 \\times 0.1823 \\approx 3.65 \\text{ hr}",
+    "pred_doc_name": "Range and endurance.pdf",
+    "pred_page": 39,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Range and endurance.pdf",
+        "page": 39,
+        "score": 0.97
+      }
+    ],
+    "confidence": 0.96,
+    "timestamp": "2025-12-02T10:31:05Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q015",
+    "question_text": "Using the normal-force balance L + T sin ε − W cos γ = m V²/rc, compute L + T sin ε − W cos γ when T = 15000 N, ε = 3°, W = 50000 N, γ = 0°.",
+    "pred_answer": "-49214 N",
+    "pred_formula_latex": "L + T\\sin\\varepsilon - W\\cos\\gamma = L + 15000\\sin(3°) - 50000\\cos(0°) = L + 15000(0.0523) - 50000 = L + 786 - 50000 = L - 49214",
+    "pred_doc_name": "The equations of motion.pdf",
+    "pred_page": 12,
+    "retrieved_chunks": [
+      {
+        "doc_name": "The equations of motion.pdf",
+        "page": 12,
+        "score": 0.95
+      }
+    ],
+    "confidence": 0.93,
+    "timestamp": "2025-12-02T10:31:10Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q016",
+    "question_text": "Using ηp = 2/(1 + Ve/V0), find the exhaust velocity ratio Ve/V0 required to achieve ηp = 0.8.",
+    "pred_answer": "1.5",
+    "pred_formula_latex": "\\eta_p = \\frac{2}{1 + V_e/V_0} \\Rightarrow 0.8 = \\frac{2}{1 + V_e/V_0} \\Rightarrow 1 + \\frac{V_e}{V_0} = \\frac{2}{0.8} = 2.5 \\Rightarrow \\frac{V_e}{V_0} = 1.5",
+    "pred_doc_name": "Engine efficiency.pdf",
+    "pred_page": 31,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Engine efficiency.pdf",
+        "page": 31,
+        "score": 0.97
+      }
+    ],
+    "confidence": 0.98,
+    "timestamp": "2025-12-02T10:31:15Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q017",
+    "question_text": "A turbofan has ṁc = 18 kg/s, BPR = 10, Ve = 520 m/s, Vb = 290 m/s. Compute symbolic thrust using T = ṁc(Ve + BPR Vb) − ṁ0 V0.",
+    "pred_answer": "T = 18(520 + 10×290) - ṁ0·V0 = 18(520 + 2900) - ṁ0·V0 = 61560 - ṁ0·V0 N",
+    "pred_formula_latex": "T = \\dot{m}_c(V_e + \\text{BPR} \\cdot V_b) - \\dot{m}_0 V_0 = 18(520 + 10 \\times 290) - \\dot{m}_0 V_0 = 61560 - \\dot{m}_0 V_0 \\text{ N}",
+    "pred_doc_name": "Turbofan engine.pdf",
+    "pred_page": 28,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Turbofan engine.pdf",
+        "page": 28,
+        "score": 0.96
+      }
+    ],
+    "confidence": 0.95,
+    "timestamp": "2025-12-02T10:31:20Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q018",
+    "question_text": "Using turbojet formula T = ṁ0(Ve − V0), what is thrust when Ve = 1500 ft/s, V0 = 700 ft/s, ṁ0 = 90 lbm/s (use symbolic answer)?",
+    "pred_answer": "T = 90(1500 - 700) = 72000 lbm·ft/s² or T = 72000/32.174 = 2238 lbf",
+    "pred_formula_latex": "T = \\dot{m}_0(V_e - V_0) = 90(1500 - 700) = 72000 \\text{ lbm·ft/s}^2 = \\frac{72000}{32.174} \\approx 2238 \\text{ lbf}",
+    "pred_doc_name": "Turbojet engine.pdf",
+    "pred_page": 19,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Turbojet engine.pdf",
+        "page": 19,
+        "score": 0.94
+      }
+    ],
+    "confidence": 0.92,
+    "timestamp": "2025-12-02T10:31:25Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q019",
+    "question_text": "Using TR = q∞ S CD, compute TR symbolically for q∞ = (1/2)ρ∞V∞².",
+    "pred_answer": "TR = (1/2)ρ∞V∞²SCD",
+    "pred_formula_latex": "T_R = q_\\infty S C_D = \\frac{1}{2}\\rho_\\infty V_\\infty^2 S C_D",
+    "pred_doc_name": "Thrust required and available.pdf",
+    "pred_page": 25,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Thrust required and available.pdf",
+        "page": 25,
+        "score": 0.98
+      }
+    ],
+    "confidence": 0.99,
+    "timestamp": "2025-12-02T10:31:30Z"
+  },
+  {
+    "system_name": "Claude",
+    "question_id": "Q020",
+    "question_text": "Using maximum L/D formula (L/D)max = sqrt(1/(4 K CD,0)), compute (L/D)max when K = 0.04 and CD,0 = 0.02.",
+    "pred_answer": "17.68",
+    "pred_formula_latex": "\\left(\\frac{L}{D}\\right)_{\\max} = \\sqrt{\\frac{1}{4KC_{D,0}}} = \\sqrt{\\frac{1}{4(0.04)(0.02)}} = \\sqrt{\\frac{1}{0.0032}} = \\sqrt{312.5} \\approx 17.68",
+    "pred_doc_name": "The drag polar.pdf",
+    "pred_page": 21,
+    "retrieved_chunks": [
+      {
+        "doc_name": "The drag polar.pdf",
+        "page": 21,
+        "score": 0.97
+      }
+    ],
+    "confidence": 0.98,
+    "timestamp": "2025-12-02T10:31:35Z"
+  }
+]

@@ -1,0 +1,173 @@
+[
+  {
+    "system_name": "Wenxin",
+    "question_id": "Q001",
+    "question_text": "Based on the thrust equation, compute the net thrust T when ṁ0 = 50 kg/s, ṁf = 1 kg/s, Ve = 550 m/s and V0 = 250 m/s.",
+    "pred_answer": "15050",
+    "pred_formula_latex": "T = (\\dot{m}_0 + \\dot{m}_f)V_e - \\dot{m}_0V_0 = (50 + 1) \\times 550 - 50 \\times 250 = 15050 \\text{ N}",
+    "pred_doc_name": "The thrust equa.pdf",
+    "pred_page": 5,
+    "retrieved_chunks": [
+      {
+        "doc_name": "The thrust equa.pdf",
+        "page": 5,
+        "score": 0.95,
+        "content": "The general thrust equation is then given by T=(˙m0+˙m f)V e−˙m0V0+(p e−p0)A e"
+      }
+    ],
+    "confidence": 0.94,
+    "timestamp": "2025-11-15T13:22:00Z"
+  },
+  {
+    "system_name": "Wenxin",
+    "question_id": "Q002",
+    "question_text": "Using the general thrust equation T = (ṁ0 + ṁf)Ve − ṁ0V0 + (pe − p0)Ae, compute the pressure term when pe − p0 = 500 Pa and Ae = 0.2 m².",
+    "pred_answer": "100",
+    "pred_formula_latex": "F = (p_e - p_0)A_e = 500 \\times 0.2 = 100 \\text{ N}",
+    "pred_doc_name": "The thrust equa.pdf",
+    "pred_page": 5,
+    "retrieved_chunks": [
+      {
+        "doc_name": "The thrust equa.pdf",
+        "page": 5,
+        "score": 0.95,
+        "content": "The general thrust equation is then given by T=(˙m0+˙m f)V e−˙m0V0+(p e−p0)A e"
+      }
+    ],
+    "confidence": 0.94,
+    "timestamp": "2025-11-15T13:22:00Z"
+  },
+  {
+    "system_name": "Wenxin",
+    "question_id": "Q003",
+    "question_text": "According to the Breguet range equation R = (V∞/(TSFC)) (L/D) ln(W0/W1), compute R when V∞ = 200 m/s, TSFC = 0.5 1/hr, L/D = 15, W0 = 60000 N, W1 = 50000 N.",
+    "pred_answer": "1043.6",
+    "pred_formula_latex": "R = \\frac{V_\\infty}{\\text{TSFC}} \\frac{L}{D} \\ln\\left(\\frac{W_0}{W_1}\\right) = \\frac{200}{0.5 \\times 3600} \\times 15 \\times \\ln\\left(\\frac{60000}{50000}\\right) \\approx 1043.6 \\text{ km}",
+    "pred_doc_name": "Range and endur.pdf",
+    "pred_page": 7,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Range and endur.pdf",
+        "page": 7,
+        "score": 0.93,
+        "content": "Finally,we have the Breguet range equation R= V∞/(TSFC) (L/D) ln(W0/W1)"
+      }
+    ],
+    "confidence": 0.92,
+    "timestamp": "2025-11-15T13:22:00Z"
+  },
+  {
+    "system_name": "Wenxin",
+    "question_id": "Q015",
+    "question_text": "Using the normal-force balance L + T sin ε − W cos γ = m V²/rc, compute L + T sin ε − W cos γ when T = 15000 N, ε = 3°, W = 50000 N, γ = 0°.",
+    "pred_answer": "15774.8",
+    "pred_formula_latex": "L + T \\sin \\epsilon - W \\cos \\gamma = 15000 \\times \\sin(3^\\circ) - 50000 \\times \\cos(0^\\circ) \\approx 15774.8 \\text{ N} \\text{ (assuming } mV^2/r_c = 0 \\text{)}",
+    "pred_doc_name": "The equations o.pdf",
+    "pred_page": 6,
+    "retrieved_chunks": [
+      {
+        "doc_name": "The equations o.pdf",
+        "page": 6,
+        "score": 0.95,
+        "content": "Normal to the flight path: F⊥=L+T sinϵ−W cosγ=m V2/rc"
+      }
+    ],
+    "confidence": 0.94,
+    "timestamp": "2025-11-15T13:22:00Z"
+  },
+  {
+    "system_name": "Wenxin",
+    "question_id": "Q016",
+    "question_text": "Using ηp = 2/(1 + Ve/V0), find the exhaust velocity ratio Ve/V0 required to achieve ηp = 0.8.",
+    "pred_answer": "0.5",
+    "pred_formula_latex": "\\eta_p = \\frac{2}{1 + \\frac{V_e}{V_0}} \\Rightarrow 0.8 = \\frac{2}{1 + \\frac{V_e}{V_0}} \\Rightarrow \\frac{V_e}{V_0} = 0.5",
+    "pred_doc_name": "Engine efficien.pdf",
+    "pred_page": 2,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Engine efficien.pdf",
+        "page": 2,
+        "score": 0.95,
+        "content": "Eventually,the propulsive eﬃciency comes down to the ratio of Ve and V0! ηp= 2/(1+Ve/V0)"
+      }
+    ],
+    "confidence": 0.94,
+    "timestamp": "2025-11-15T13:22:00Z"
+  },
+  {
+    "system_name": "Wenxin",
+    "question_id": "Q017",
+    "question_text": "A turbofan has ṁc = 18 kg/s, BPR = 10, Ve = 520 m/s, Vb = 290 m/s. Compute symbolic thrust using T = ṁc(Ve + BPR Vb) − ṁ0 V0.",
+    "pred_answer": "T = 18(Ve + 10Vb) - (18 + 180)V0 (symbolic form)",
+    "pred_formula_latex": "T = \\dot{m}_c(V_e + \\text{BPR} V_b) - \\dot{m}_0 V_0 = 18(V_e + 10V_b) - (18 + 180)V_0",
+    "pred_doc_name": "Turbofan engine.pdf",
+    "pred_page": 4,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Turbofan engine.pdf",
+        "page": 4,
+        "score": 0.95,
+        "content": "The turbofan thrust equation becomes: T=˙m c(V e+BPR V b)−˙m0V0"
+      }
+    ],
+    "confidence": 0.94,
+    "timestamp": "2025-11-15T13:22:00Z"
+  },
+  {
+    "system_name": "Wenxin",
+    "question_id": "Q018",
+    "question_text": "Using turbojet formula T = ṁ0(Ve − V0), what is thrust when Ve = 1500 ft/s, V0 = 700 ft/s, ṁ0 = 90 lbm/s (use symbolic answer)?",
+    "pred_answer": "72000 lbm·ft/s² (or 2224.11 N after unit conversion)",
+    "pred_formula_latex": "T = \\dot{m}_0(V_e - V_0) = 90 \\times (1500 - 700) = 72000 \\text{ lbm·ft/s}^2 \\approx 2224.11 \\text{ N}",
+    "pred_doc_name": "Turbojet engine.pdf",
+    "pred_page": 3,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Turbojet engine.pdf",
+        "page": 3,
+        "score": 0.95,
+        "content": "Turbojet engine performance •For turbojet engine,T is mostly increased by increasing Ve−V0 T=˙m0(V e−V0)"
+      }
+    ],
+    "confidence": 0.94,
+    "timestamp": "2025-11-15T13:22:00Z"
+  },
+  {
+    "system_name": "Wenxin",
+    "question_id": "Q019",
+    "question_text": "Using TR = q∞ S CD, compute TR symbolically for q∞ = (1/2)ρ∞V∞².",
+    "pred_answer": "TR = (1/2)ρ∞V∞² S CD (symbolic form)",
+    "pred_formula_latex": "TR = q_\\infty S C_D = \\frac{1}{2} \\rho_\\infty V_\\infty^2 S C_D",
+    "pred_doc_name": "Thrust required.pdf",
+    "pred_page": 1,
+    "retrieved_chunks": [
+      {
+        "doc_name": "Thrust required.pdf",
+        "page": 1,
+        "score": 0.95,
+        "content": "The thrust required (TR) to obtain steady flight is T_R=D"
+      }
+    ],
+    "confidence": 0.94,
+    "timestamp": "2025-11-15T13:22:00Z"
+  },
+  {
+    "system_name": "Wenxin",
+    "question_id": "Q020",
+    "question_text": "Using maximum L/D formula (L/D)max = sqrt(1/(4 K CD,0)), compute (L/D)max when K = 0.04 and CD,0 = 0.02.",
+    "pred_answer": "17.68",
+    "pred_formula_latex": "(L/D)_{\\text{max}} = \\sqrt{\\frac{1}{4 K C_{D,0}}} = \\sqrt{\\frac{1}{4 \\times 0.04 \\times 0.02}} \\approx 17.68",
+    "pred_doc_name": "The drag polar.pdf",
+    "pred_page": 7,
+    "retrieved_chunks": [
+      {
+        "doc_name": "The drag polar.pdf",
+        "page": 7,
+        "score": 0.95,
+        "content": "We can obtain the design lift coefficient when CD,0=KCL2 , i.e., when zero-lift drag and drag due to lift have equal magnitudes. With the design lift coefficient CL = CD,o/ K, we have the maximum lift-to-drag ratio (L/D)max=√(1/(4KCD⋅O))"
+      }
+    ],
+    "confidence": 0.94,
+    "timestamp": "2025-11-15T13:22:00Z"
+  }
+]

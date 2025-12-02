@@ -1,0 +1,18 @@
+[
+  {
+    "system_name": "DeepSeek-R1",
+    "question_id": "Q001",
+    "question_text": "Compute the derivative of f(x) = x^2 + 3x + 1.",
+    "pred_answer": "2x + 3",
+    "pred_formula_latex": "f'(x) = 2x + 3",
+    "pred_doc_name": "calculus_notes.pdf",
+    "pred_page": 12,
+    "retrieved_chunks": [{
+            "doc_name": "calculus_notes.pdf",
+            "page": 12,
+            "score": 0.92
+        }],
+    "confidence": 0.94,
+    "timestamp": "2025-11-15T13:22:00Z"
+  }
+]

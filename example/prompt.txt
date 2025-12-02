@@ -1,2 +1,3 @@
-please read the question.json file, then filling the json with external knowledge in your base. 
-Provide the final json for me.
+Load and inspect the contents of question.json. For each question entry, generate the missing fields using only your internal knowledge and reasoning ability. 
+Use sample_question.json and sample_answer.json as the formatting reference, and ensure the output strictly follows the same JSON schema. 
+Do not modify field names or add new fields. Return only the final JSON FILE.
