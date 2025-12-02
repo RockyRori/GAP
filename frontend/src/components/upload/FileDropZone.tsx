@@ -1,3 +1,4 @@
+// src/components/upload/FileDropZone.tsx
 import React, { useCallback, useState } from "react";
 
 interface Props {
@@ -48,7 +49,10 @@ export const FileDropZone: React.FC<Props> = ({ onFilesSelected }) => {
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
     >
-      <p>Drag & drop MRAG JSON files here, or click to select (multiple allowed).</p>
+      <p>
+        Drag &amp; drop <code>result_new.json</code> files here, or click to
+        select (multiple allowed).
+      </p>
       <input
         type="file"
         accept="application/json"
