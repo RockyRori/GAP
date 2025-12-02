@@ -28,7 +28,7 @@ export async function parseAnswerFile(file: File): Promise<MRAGSample[]> {
 }
 
 /**
- * 解析多个 result_new.json：
+ * 解析多个 result.json：
  * - 可以一次上传多个文件，对应多个 MRAG 系统
  * - 每个文件只包含 pred_* 字段（预测结果）
  * - gold_* 字段通常为 null
@@ -60,10 +60,10 @@ export async function parseResultFiles(files: File[]): Promise<MRAGSample[]> {
 }
 
 /**
- * 将 answer.json 提供的 gold 信息，与多个 result_new.json 中的 pred 信息按 question_id 进行合并。
+ * 将 answer.json 提供的 gold 信息，与多个 result.json 中的 pred 信息按 question_id 进行合并。
  *
  * - goldSamples：来自 answer.json，只填 gold_* 字段
- * - predSamples：来自 result_new.json，只填 pred_* 字段
+ * - predSamples：来自 result.json，只填 pred_* 字段
  *
  * 返回：每条样本包含 gold + pred + provenance 信息，用于后续评测。
  * 规则：

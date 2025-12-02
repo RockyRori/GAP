@@ -111,7 +111,7 @@ export const UploadPage: React.FC = () => {
       <p>
         GAP now expects the benchmark to be split into two parts: a ground-truth{" "}
         <code>answer.json</code> file and one or more{" "}
-        <code>result_new.json</code> files produced by external MRAG systems.
+        <code>result.json</code> files produced by external MRAG systems.
         Answers are never exposed to the evaluated systems.
       </p>
 
@@ -140,11 +140,11 @@ export const UploadPage: React.FC = () => {
         )}
       </div>
 
-      {/* 2. 上传若干 result_new.json */}
+      {/* 2. 上传若干 result.json */}
       <div style={{ marginTop: "2rem" }}>
-        <h2>Step 2. Upload MRAG Predictions (result_new.json)</h2>
+        <h2>Step 2. Upload MRAG Predictions (result.json)</h2>
         <p>
-          Upload one or more <code>result_new.json</code> files, each produced by
+          Upload one or more <code>result.json</code> files, each produced by
           an MRAG system on the same question set. Each file should contain only
           prediction fields (predicted answers, formulas, and provenance) without
           gold labels.
@@ -166,7 +166,7 @@ export const UploadPage: React.FC = () => {
           Current merged evaluation samples:{" "}
           <strong>{samples.length}</strong>. GAP will only evaluate the
           intersection of questions that appear in <code>answer.json</code> and
-          the uploaded <code>result_new.json</code> files.
+          the uploaded <code>result.json</code> files.
         </p>
       </div>
 

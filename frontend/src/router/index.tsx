@@ -8,6 +8,7 @@ import { UploadPage } from "../pages/UploadPage";
 import { EvaluationPage } from "../pages/EvaluationPage";
 import { ReportPage } from "../pages/ReportPage";
 import { AboutPage } from "../pages/AboutPage";
+import { BuilderPage } from "../pages/BuilderPage";
 
 export const AppRouter: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ export const AppRouter: React.FC = () => {
       <PageContainer>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/build" element={<BuilderPage />} />
           <Route path="/upload" element={<UploadPage />} />
           <Route path="/evaluation" element={<EvaluationPage />} />
           <Route path="/report" element={<ReportPage />} />

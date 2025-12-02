@@ -11,6 +11,7 @@ export const Header: React.FC = () => {
         </div>
         <nav className="gap-nav">
           <Link to="/">Home</Link>
+          <Link to="/build">Build</Link>
           <Link to="/upload">Upload</Link>
           <Link to="/evaluation">Evaluation</Link>
           <Link to="/report">Report</Link>

@@ -50,7 +50,7 @@ export const FileDropZone: React.FC<Props> = ({ onFilesSelected }) => {
       onDragLeave={handleDragLeave}
     >
       <p>
-        Drag &amp; drop <code>result_new.json</code> files here, or click to
+        Drag &amp; drop <code>result.json</code> files here, or click to
         select (multiple allowed).
       </p>
       <input
