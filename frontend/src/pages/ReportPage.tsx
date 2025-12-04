@@ -4,6 +4,7 @@ import { useGap } from "../store/GapContext";
 import { ReportSummaryCard } from "../components/report/ReportSummaryCard";
 import { DownloadButtons } from "../components/report/DownloadButtons";
 import { RadarChartPanel } from "../components/report/RadarChartPanel";
+import { StackedBarChartPanel } from "../components/report/StackedBarChartPanel";
 
 export const ReportPage: React.FC = () => {
   const { samples, metricsBySystem } = useGap();
@@ -28,7 +29,11 @@ export const ReportPage: React.FC = () => {
 
       <ReportSummaryCard metricsBySystem={metricsBySystem} />
 
+      {/* 雷达图 */}
       <RadarChartPanel metricsBySystem={metricsBySystem} />
+
+      {/* 新增：G/A/P 贡献堆叠柱状图 */}
+      <StackedBarChartPanel metricsBySystem={metricsBySystem} />
 
       <DownloadButtons metricsBySystem={metricsBySystem} />
     </section>

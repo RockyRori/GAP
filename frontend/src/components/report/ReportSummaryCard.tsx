@@ -1,5 +1,7 @@
+// src/components/report/ReportSummaryCard.tsx
 import React from "react";
 import type { GapMetrics } from "../../types/gap";
+import './ReportSummaryCard.css';
 
 interface Props {
   metricsBySystem: Record<string, GapMetrics>;
@@ -18,15 +20,20 @@ export const ReportSummaryCard: React.FC<Props> = ({ metricsBySystem }) => {
         {systemNames.map((name) => {
           const m = metricsBySystem[name];
           return (
-            <li key={name}>
-              <strong>{name}</strong>: Overall{" "}
-              {(m.overallScore * 100).toFixed(2)}%
-              {"  |  "}
-              G: {(m.groundFormulaAccuracy * 100).toFixed(2)}%
-              {"  |  "}
-              A: {(m.answerAccuracy * 100).toFixed(2)}%
-              {"  |  "}
-              P: {(m.provenanceAccuracy * 100).toFixed(2)}%
+            <li key={name} className="summary-item">
+              <strong>{name}</strong>
+              <span className="metric-item">
+                Overall: {(m.overallScore * 100).toFixed(2)}%
+              </span>{" "}
+              <span className="metric-item">
+                G: {(m.groundFormulaAccuracy * 100).toFixed(2)}%
+              </span>{" "}
+              <span className="metric-item">
+                A: {(m.answerAccuracy * 100).toFixed(2)}%
+              </span>{" "}
+              <span className="metric-item">
+                P: {(m.provenanceAccuracy * 100).toFixed(2)}%
+              </span>
             </li>
           );
         })}

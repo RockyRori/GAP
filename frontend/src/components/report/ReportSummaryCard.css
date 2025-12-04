@@ -1,0 +1,32 @@
+/* src/components/report/ReportSummaryCard.css */
+.gap-report-summary ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.metric-item {
+  flex-basis: 20%;
+  text-align: right;
+}
+
+/* 确保内容对齐 */
+strong {
+  width: 20%;
+  text-align: left;
+}
+
+span {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* 保证最后部分对齐 */
+.metric-item:last-child {
+  margin-right: 0;
+}
