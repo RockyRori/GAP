@@ -11,13 +11,23 @@ function safeDiv(n: number, d: number): number {
 }
 
 /**
- * Try to parse numeric-like answers: supports plain floats and "a/b" fractions.
+ * Try to parse numeric-like answers.
+ *
+ * Strategy:
+ *  - Trim the string
+ *  - Handle simple "a/b" fraction exactly
+ *  - Otherwise, scan for numeric tokens (including decimals / scientific notation)
+ *    and take the last one as the final answer
  */
 function parseNumberLike(raw: string): number | null {
-  const s = raw.trim();
+  if (!raw) return null;
+  let s = raw.trim();
   if (!s) return null;
 
-  // fraction form: a/b
+  // Normalize some common unicode math symbols
+  s = s.replace(/×/g, "*").replace(/−/g, "-");
+
+  // fraction form: a/b (only if the whole string matches)
   const fracMatch = s.match(/^([-+]?\d+)\s*\/\s*([-+]?\d+)$/);
   if (fracMatch) {
     const num = parseFloat(fracMatch[1]);
@@ -27,6 +37,18 @@ function parseNumberLike(raw: string): number | null {
     }
   }
 
+  // General case: pick the last numeric-looking token
+  const numberPattern = /[-+]?\d*\.?\d+(?:[eE][-+]?\d+)?/g;
+  const matches = s.match(numberPattern);
+  if (matches && matches.length > 0) {
+    const last = matches[matches.length - 1];
+    const v = parseFloat(last);
+    if (!Number.isNaN(v)) {
+      return v;
+    }
+  }
+
+  // Fallback: try parsing the whole string
   const v = parseFloat(s);
   if (Number.isNaN(v)) return null;
   return v;
@@ -34,10 +56,16 @@ function parseNumberLike(raw: string): number | null {
 
 /**
  * Answer equivalence (A):
- * - if raw strings are exactly equal (trimmed) => equivalent
- * - else, if both can be parsed as numbers / fractions and |a-b| <= eps => equivalent
+ *  - if raw strings are exactly equal (trimmed) => equivalent
+ *  - else, if both can be parsed as numbers and relative error < relTol => equivalent
+ *
+ * We use |pred - gold| / max(|gold|, 1e-9) < 0.02 as the default rule.
  */
-function isAnswerEquivalent(gold: string | null, pred: string | null, eps = 1e-6): boolean {
+function isAnswerEquivalent(
+  gold: string | null,
+  pred: string | null,
+  relTol = 0.02
+): boolean {
   if (!gold || !pred) return false;
 
   const gTrim = gold.trim();
@@ -55,16 +83,18 @@ function isAnswerEquivalent(gold: string | null, pred: string | null, eps = 1e-6
     return false;
   }
 
-  return Math.abs(gNum - pNum) <= eps;
+  const denom = Math.max(Math.abs(gNum), 1e-9);
+  const relErr = Math.abs(pNum - gNum) / denom;
+  return relErr < relTol;
 }
 
 /**
- * Very lightweight LaTeX / expression normalization to capture simple equivalences.
- * This is NOT a full CAS, but it handles:
- * - removing common function prefixes like "f(x)=" or "y="
- * - removing whitespace
- * - normalizing some operators
- * - sorting additive terms split by '+' to handle "kx+1" vs "1+kx"
+ * Normalize LaTeX-like formula strings into a canonical textual representation.
+ * This is a lightweight "symbolic normalization" used in the browser:
+ *  - strip outer variable assignments like "y =" or "f(x) ="
+ *  - normalize multiplication symbols
+ *  - drop whitespace and some harmless spacing commands
+ *  - very rough reordering of additive terms separated by '+'
  */
 function normalizeFormulaString(raw: string): string {
   let s = raw.trim();
@@ -77,6 +107,13 @@ function normalizeFormulaString(raw: string): string {
   // Normalize multiplication symbols
   s = s.replace(/\\cdot/g, "*");
   s = s.replace(/\\times/g, "*");
+
+  // Remove common LaTeX sizing / spacing
+  s = s.replace(/\\left/g, "");
+  s = s.replace(/\\right/g, "");
+  s = s.replace(/\\,/g, "");
+  s = s.replace(/\\;/g, "");
+  s = s.replace(/\\!/g, "");
 
   // Remove all whitespace
   s = s.replace(/\s+/g, "");
@@ -95,15 +132,11 @@ function normalizeFormulaString(raw: string): string {
 
 /**
  * Formula equivalence (G):
- * - if both gold and pred are non-empty
- * - normalize both sides
- * - compare normalized strings for equality
+ *  - if both gold and pred are non-empty
+ *  - normalize both sides
+ *  - compare normalized strings for equality
  *
- * This approximates "mathematical equivalence" for simple formulas like:
- *   y = kx + 1
- *   y = 1 + kx
- *   1 + kx
- * which will be treated as equivalent.
+ * This approximates "mathematical equivalence" for simple formulas.
  */
 function isFormulaEquivalent(
   gold: string | null,
@@ -119,6 +152,47 @@ function isFormulaEquivalent(
   return gNorm === pNorm;
 }
 
+/**
+ * Normalize document names for provenance comparison:
+ *  - trim
+ *  - lowercase
+ *  - collapse internal whitespace
+ */
+function normalizeDocName(name: string): string {
+  return name.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+/**
+ * Extract the main prefix of a document name (without .pdf suffix).
+ */
+function extractDocPrefix(name: string): string {
+  const n = normalizeDocName(name);
+  if (n.endsWith(".pdf")) {
+    return n.slice(0, -4).trim();
+  }
+  return n;
+}
+
+/**
+ * Document name equivalence:
+ *  - both non-null and non-empty
+ *  - gold "main prefix" must appear as a substring in the normalized pred name
+ *    (e.g., "abc.pdf" vs "ABC   ABC.pdf" are considered a match)
+ */
+function isDocNameMatch(
+  gold: string | null,
+  pred: string | null
+): boolean {
+  if (!gold || !pred) return false;
+
+  const goldPrefix = extractDocPrefix(gold);
+  const predClean = normalizeDocName(pred);
+
+  if (!goldPrefix) return false;
+
+  return predClean.includes(goldPrefix);
+}
+
 export function computeMetricsForSystem(samples: MRAGSample[]): GapMetrics {
   const total = samples.length;
 
@@ -128,34 +202,34 @@ export function computeMetricsForSystem(samples: MRAGSample[]): GapMetrics {
   let pageCorrect = 0;         // pageLoc
 
   for (const s of samples) {
-    // Answer Accuracy (A): numeric / string equivalence
+    // Answer Accuracy (A): numeric / string equivalence with relative tolerance
     if (isAnswerEquivalent(s.gold_answer, s.pred_answer)) {
       answerCorrect++;
     }
 
-    // Ground Formula (G): formula equivalence
+    // Ground Formula (G): formula equivalence via symbolic-like normalization
     if (isFormulaEquivalent(s.gold_formula_latex, s.pred_formula_latex)) {
       formulaCorrect++;
     }
 
-    // Doc-level grounding
+    // Doc-level grounding: relaxed document name matching
     const docOk =
       s.gold_doc_name !== null &&
       s.pred_doc_name !== null &&
       s.gold_doc_name.trim() !== "" &&
       s.pred_doc_name.trim() !== "" &&
-      s.gold_doc_name.trim() === s.pred_doc_name.trim();
+      isDocNameMatch(s.gold_doc_name, s.pred_doc_name);
 
     if (docOk) {
       docCorrect++;
     }
 
-    // Page-level grounding (requires doc also correct)
+    // Page-level grounding (requires doc also correct), allowing ±1 page
     const pageOk =
       docOk &&
       s.gold_page !== null &&
       s.pred_page !== null &&
-      s.gold_page === s.pred_page;
+      Math.abs(s.gold_page - s.pred_page) <= 1;
 
     if (pageOk) {
       pageCorrect++;

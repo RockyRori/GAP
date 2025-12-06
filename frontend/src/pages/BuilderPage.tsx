@@ -15,8 +15,8 @@ function getNextQuestionId(samples: MRAGSample[]): string {
       }
     }
   }
-  const next = maxIndex + 1 || 1;
-  return `Q${String(next).padStart(3, "0")}`;
+  const nextIndex = maxIndex + 1;
+  return `Q${nextIndex.toString().padStart(3, "0")}`;
 }
 
 export const BuilderPage: React.FC = () => {
@@ -28,19 +28,17 @@ export const BuilderPage: React.FC = () => {
   const [goldFormula, setGoldFormula] = useState("");
   const [goldDocName, setGoldDocName] = useState("");
   const [goldPage, setGoldPage] = useState("");
+
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const nextQuestionId = getNextQuestionId(answerSamples);
-
-  const handleUploadAnswer = async (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleAnswerFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
     setError(null);
     setLoading(true);
+
     try {
       const samples = await parseAnswerFile(file);
       setAnswerSamples(samples);
@@ -64,13 +62,28 @@ export const BuilderPage: React.FC = () => {
       return;
     }
 
-    const pageNum =
-      goldPage.trim() === "" ? null : Number.parseInt(goldPage.trim(), 10);
-
-    if (goldPage.trim() !== "" && Number.isNaN(pageNum)) {
-      setError("gold_page must be an integer or left empty.");
+    if (!goldAnswer.trim()) {
+      setError("Gold answer cannot be empty.");
       return;
     }
+
+    if (!goldFormula.trim()) {
+      setError("Gold formula LaTeX cannot be empty.");
+      return;
+    }
+
+    if (!goldDocName.trim()) {
+      setError("Gold document name cannot be empty.");
+      return;
+    }
+
+    const pageNum = goldPage.trim() ? Number(goldPage.trim()) : null;
+    if (goldPage.trim() && Number.isNaN(pageNum)) {
+      setError("Gold page must be a valid number.");
+      return;
+    }
+
+    const nextQuestionId = getNextQuestionId(answerSamples);
 
     const newSample: MRAGSample = {
       system_name: null,
@@ -96,7 +109,6 @@ export const BuilderPage: React.FC = () => {
 
     setAnswerSamples((prev) => [...prev, newSample]);
 
-    // 清空输入，准备下一题
     setQuestionText("");
     setGoldAnswer("");
     setGoldFormula("");
@@ -104,26 +116,37 @@ export const BuilderPage: React.FC = () => {
     setGoldPage("");
   };
 
+  // ✅ 修改：导出 answer.json 的字段和顺序
   const handleDownloadAnswer = () => {
-    downloadJsonReport(answerSamples, "answer.json");
-  };
-
-  const handleDownloadQuestion = () => {
-    const questionArray = answerSamples.map((s) => ({
-      system_name: null,
+    const answerArray = answerSamples.map((s) => ({
+      system_name: s.system_name ?? null,
+      timestamp: s.timestamp ?? null,
       question_id: s.question_id,
       question_text: s.question_text,
-    //   gold_answer: null,
-      pred_answer: null,
-    //   gold_formula_latex: null,
-      pred_formula_latex: null,
-    //   gold_doc_name: null,
+      gold_doc_name: s.gold_doc_name,
+      pred_doc_name: s.pred_doc_name,
+      gold_page: s.gold_page,
+      pred_page: s.pred_page,
+      gold_formula_latex: s.gold_formula_latex,
+      pred_formula_latex: s.pred_formula_latex,
+      gold_answer: s.gold_answer,
+      pred_answer: s.pred_answer,
+    }));
+
+    downloadJsonReport(answerArray, "answer.json");
+  };
+
+  // ✅ 修改：导出 question.json 的字段和顺序
+  const handleDownloadQuestion = () => {
+    const questionArray = answerSamples.map((s) => ({
+      system_name: s.system_name ?? null,
+      timestamp: s.timestamp ?? null,
+      question_id: s.question_id,
+      question_text: s.question_text,
       pred_doc_name: null,
-    //   gold_page: null,
       pred_page: null,
-      retrieved_chunks: [] as any[],
-      confidence: null,
-      timestamp: null,
+      pred_formula_latex: null,
+      pred_answer: null,
     }));
 
     downloadJsonReport(questionArray, "question.json");
@@ -141,48 +164,41 @@ export const BuilderPage: React.FC = () => {
   };
 
   return (
-    <section>
-      <h1>Build Question & Answer Files</h1>
+    <section className="gap-page">
+      <h1>GAP Builder</h1>
       <p>
-        Use this page to construct <code>answer.json</code> and the corresponding{" "}
-        <code>question.json</code> locally in your browser. You can optionally
-        load an existing <code>answer.json</code>, append new questions, and
-        export the updated files at any time.
+        This page helps you build <code>answer.json</code> and <code>question.json</code> for GAP.
+        You can either load an existing <code>answer.json</code> or start from scratch.
       </p>
 
-      {/* 1. 可选上传现有 answer.json */}
-      <div style={{ marginTop: "1.5rem", marginBottom: "1rem" }}>
-        <h2>Step 1. (Optional) Load Existing answer.json</h2>
-        <input
-          type="file"
-          accept="application/json"
-          onChange={handleUploadAnswer}
-        />
-        {answerFileName ? (
+      <div className="gap-card" style={{ marginTop: "1rem" }}>
+        <h2>1. Load Existing answer.json (Optional)</h2>
+        <p>Upload an existing answer.json to continue editing or appending new questions.</p>
+        <input type="file" accept=".json,application/json" onChange={handleAnswerFileChange} />
+        {answerFileName && (
           <p style={{ marginTop: "0.5rem" }}>
-            Loaded answer file: <strong>{answerFileName}</strong> with{" "}
-            <strong>{answerSamples.length}</strong> questions.
+            Loaded file: <strong>{answerFileName}</strong> ({answerSamples.length} samples)
           </p>
-        ) : (
-          <p style={{ marginTop: "0.5rem", color: "#6b7280" }}>
-            No answer file loaded yet. You can start from an empty set.
+        )}
+        {loading && <p>Loading answer.json, please wait...</p>}
+        {error && (
+          <p style={{ color: "red", marginTop: "0.5rem" }}>
+            <strong>Error:</strong> {error}
           </p>
         )}
       </div>
 
-      {/* 2. 输入新题目 */}
-      <div style={{ marginTop: "2rem" }}>
-        <h2>Step 2. Add New Question-Answer Pairs</h2>
+      <div className="gap-card" style={{ marginTop: "1.5rem" }}>
+        <h2>2. Add New Question</h2>
         <p>
-          The next question will be assigned ID{" "}
-          <code>{nextQuestionId}</code>. Fill in the following fields and click{" "}
-          <strong>Add Question</strong>.
+          Fill in the fields below to add a new question with its gold information. Fields marked as
+          &quot;gold&quot; will be used as ground truth in GAP evaluation.
         </p>
 
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr",
+            display: "flex",
+            flexDirection: "column",
             gap: "0.75rem",
             maxWidth: "720px",
           }}
@@ -207,6 +223,7 @@ export const BuilderPage: React.FC = () => {
                 value={goldAnswer}
                 onChange={(e) => setGoldAnswer(e.target.value)}
                 style={{ width: "100%", marginTop: "0.25rem" }}
+                placeholder='e.g., "1200"'
               />
             </label>
           </div>
@@ -214,112 +231,83 @@ export const BuilderPage: React.FC = () => {
           <div>
             <label>
               Gold Formula LaTeX (gold_formula_latex)
-              <input
-                type="text"
+              <textarea
                 value={goldFormula}
                 onChange={(e) => setGoldFormula(e.target.value)}
-                style={{ width: "100%", marginTop: "0.25rem" }}
+                rows={2}
+                style={{ width: "100%", marginTop: "0.25rem", fontFamily: "monospace" }}
+                placeholder='e.g., R = \\frac{V_\\infty}{TSFC} \\frac{L}{D} \\ln\\left(\\frac{W_0}{W_1}\\right)'
               />
             </label>
           </div>
 
-          <div style={{ display: "flex", gap: "0.75rem" }}>
-            <div style={{ flex: 2 }}>
-              <label>
-                Gold Document Name (gold_doc_name)
-                <input
-                  type="text"
-                  value={goldDocName}
-                  onChange={(e) => setGoldDocName(e.target.value)}
-                  style={{ width: "100%", marginTop: "0.25rem" }}
-                />
-              </label>
-            </div>
-            <div style={{ flex: 1 }}>
-              <label>
-                Gold Page (gold_page)
-                <input
-                  type="text"
-                  value={goldPage}
-                  onChange={(e) => setGoldPage(e.target.value)}
-                  placeholder="e.g., 12"
-                  style={{ width: "100%", marginTop: "0.25rem" }}
-                />
-              </label>
-            </div>
+          <div>
+            <label>
+              Gold Document Name (gold_doc_name)
+              <input
+                type="text"
+                value={goldDocName}
+                onChange={(e) => setGoldDocName(e.target.value)}
+                style={{ width: "100%", marginTop: "0.25rem" }}
+                placeholder='e.g., "Range and endurance.pdf"'
+              />
+            </label>
+          </div>
+
+          <div>
+            <label>
+              Gold Page (gold_page)
+              <input
+                type="number"
+                value={goldPage}
+                onChange={(e) => setGoldPage(e.target.value)}
+                style={{ width: "100%", marginTop: "0.25rem" }}
+                placeholder="e.g., 7"
+              />
+            </label>
+          </div>
+
+          <div style={{ marginTop: "0.5rem" }}>
+            <button className="gap-button" onClick={handleAddQuestion}>
+              Add Question to answer.json
+            </button>
+            <button
+              className="gap-button gap-button-secondary"
+              style={{ marginLeft: "0.75rem" }}
+              onClick={handleClearAll}
+            >
+              Clear All
+            </button>
           </div>
         </div>
+      </div>
 
-        {error && <p className="gap-error" style={{ marginTop: "0.5rem" }}>{error}</p>}
-        {loading && <p>Loading answer.json, please wait...</p>}
+      <section className="gap-card" style={{ marginTop: "1.5rem" }}>
+        <h2>3. Download JSON Files</h2>
+        <p>
+          After adding all questions, you can download <code>answer.json</code> and{" "}
+          <code>question.json</code> following the GAP schema.
+        </p>
 
-        <div style={{ marginTop: "1rem", display: "flex", gap: "0.75rem" }}>
-          <button className="gap-button" onClick={handleAddQuestion}>
-            Add Question
+        <div style={{ display: "flex", gap: "0.75rem", marginTop: "0.75rem" }}>
+          <button
+            className="gap-button"
+            disabled={answerSamples.length === 0}
+            onClick={handleDownloadAnswer}
+          >
+            Download answer.json
           </button>
-          <button className="gap-button-secondary" onClick={handleClearAll}>
-            Clear All
+          <button
+            className="gap-button"
+            disabled={answerSamples.length === 0}
+            onClick={handleDownloadQuestion}
+          >
+            Download question.json
           </button>
         </div>
-      </div>
-
-      {/* 3. 当前题目列表 */}
-      <div style={{ marginTop: "2rem" }}>
-        <h2>Current Questions ({answerSamples.length})</h2>
-        {answerSamples.length === 0 ? (
-          <p style={{ color: "#6b7280" }}>
-            No questions in the current answer set.
-          </p>
-        ) : (
-          <table className="gap-table">
-            <thead>
-              <tr>
-                <th>Question ID</th>
-                <th>Question Text</th>
-                <th>Gold Answer</th>
-                <th>Gold Doc</th>
-                <th>Gold Page</th>
-              </tr>
-            </thead>
-            <tbody>
-              {answerSamples.map((s) => (
-                <tr key={s.question_id}>
-                  <td>{s.question_id}</td>
-                  <td>{s.question_text}</td>
-                  <td>{s.gold_answer ?? ""}</td>
-                  <td>{s.gold_doc_name ?? ""}</td>
-                  <td>{s.gold_page ?? ""}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </div>
-
-      {/* 4. 导出按钮 */}
-      <div
-        style={{
-          marginTop: "1.5rem",
-          display: "flex",
-          gap: "0.75rem",
-          flexWrap: "wrap",
-        }}
-      >
-        <button
-          className="gap-button"
-          disabled={answerSamples.length === 0}
-          onClick={handleDownloadAnswer}
-        >
-          Download answer.json
-        </button>
-        <button
-          className="gap-button"
-          disabled={answerSamples.length === 0}
-          onClick={handleDownloadQuestion}
-        >
-          Download question.json
-        </button>
-      </div>
+      </section>
     </section>
   );
 };
+
+export default BuilderPage;
