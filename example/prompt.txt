@@ -172,7 +172,7 @@ Below is an example pair showing exactly how your output MUST look.
 Example question:
 
 {
-  "question_id": "Q003",
+  "question_id": "Q001",
   "question_text": "Using the lift equation L = 1/2 ρ V^2 S C_L, compute the lift when ρ = 1.0 kg/m^3, V = 10 m/s, S = 2 m^2, and C_L = 1.0."
 }
 
@@ -181,7 +181,7 @@ Corresponding example output object:
 {
   "system_name": "ChatGPT 5",
   "timestamp": "2025-12-02T16:49:00Z",
-  "question_id": "Q003",
+  "question_id": "Q001",
   "question_text": "Using the lift equation L = 1/2 ρ V^2 S C_L, compute the lift when ρ = 1.0 kg/m^3, V = 10 m/s, S = 2 m^2, and C_L = 1.0.",
   "pred_doc_name": "Range and endurance.pdf",
   "pred_page": 7,

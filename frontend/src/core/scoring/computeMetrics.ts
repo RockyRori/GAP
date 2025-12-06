@@ -11,6 +11,30 @@ function safeDiv(n: number, d: number): number {
 }
 
 /**
+ * 将任意类型安全转换为非空字符串，空串则返回 null
+ */
+function toNonEmptyString(raw: unknown): string | null {
+  if (raw === null || raw === undefined) return null;
+  const s = String(raw).trim();
+  return s === "" ? null : s;
+}
+
+/**
+ * 将任意类型安全转换为 number，失败则返回 null
+ */
+function toNumberOrNull(raw: unknown): number | null {
+  if (raw === null || raw === undefined) return null;
+  if (typeof raw === "number") {
+    if (Number.isNaN(raw)) return null;
+    return raw;
+  }
+  const s = String(raw).trim();
+  if (!s) return null;
+  const n = Number(s);
+  return Number.isNaN(n) ? null : n;
+}
+
+/**
  * Try to parse numeric-like answers.
  *
  * Strategy:
@@ -60,16 +84,16 @@ function parseNumberLike(raw: string): number | null {
  *  - else, if both can be parsed as numbers and relative error < relTol => equivalent
  *
  * We use |pred - gold| / max(|gold|, 1e-9) < 0.02 as the default rule.
+ *
+ * gold / pred 允许是 number 或 string 或其他。
  */
 function isAnswerEquivalent(
-  gold: string | null,
-  pred: string | null,
+  goldRaw: unknown,
+  predRaw: unknown,
   relTol = 0.02
 ): boolean {
-  if (!gold || !pred) return false;
-
-  const gTrim = gold.trim();
-  const pTrim = pred.trim();
+  const gTrim = toNonEmptyString(goldRaw);
+  const pTrim = toNonEmptyString(predRaw);
 
   if (!gTrim || !pTrim) return false;
 
@@ -136,16 +160,18 @@ function normalizeFormulaString(raw: string): string {
  *  - normalize both sides
  *  - compare normalized strings for equality
  *
- * This approximates "mathematical equivalence" for simple formulas.
+ * gold / pred 可以是任意类型，内部转成字符串。
  */
 function isFormulaEquivalent(
-  gold: string | null,
-  pred: string | null
+  goldRaw: unknown,
+  predRaw: unknown
 ): boolean {
-  if (!gold || !pred) return false;
+  const gStr = toNonEmptyString(goldRaw);
+  const pStr = toNonEmptyString(predRaw);
+  if (!gStr || !pStr) return false;
 
-  const gNorm = normalizeFormulaString(gold);
-  const pNorm = normalizeFormulaString(pred);
+  const gNorm = normalizeFormulaString(gStr);
+  const pNorm = normalizeFormulaString(pStr);
 
   if (!gNorm || !pNorm) return false;
 
@@ -158,14 +184,16 @@ function isFormulaEquivalent(
  *  - lowercase
  *  - collapse internal whitespace
  */
-function normalizeDocName(name: string): string {
-  return name.trim().toLowerCase().replace(/\s+/g, " ");
+function normalizeDocName(name: unknown): string {
+  const s = toNonEmptyString(name);
+  if (!s) return "";
+  return s.toLowerCase().replace(/\s+/g, " ");
 }
 
 /**
  * Extract the main prefix of a document name (without .pdf suffix).
  */
-function extractDocPrefix(name: string): string {
+function extractDocPrefix(name: unknown): string {
   const n = normalizeDocName(name);
   if (n.endsWith(".pdf")) {
     return n.slice(0, -4).trim();
@@ -180,13 +208,11 @@ function extractDocPrefix(name: string): string {
  *    (e.g., "abc.pdf" vs "ABC   ABC.pdf" are considered a match)
  */
 function isDocNameMatch(
-  gold: string | null,
-  pred: string | null
+  goldRaw: unknown,
+  predRaw: unknown
 ): boolean {
-  if (!gold || !pred) return false;
-
-  const goldPrefix = extractDocPrefix(gold);
-  const predClean = normalizeDocName(pred);
+  const goldPrefix = extractDocPrefix(goldRaw);
+  const predClean = normalizeDocName(predRaw);
 
   if (!goldPrefix) return false;
 
@@ -196,40 +222,46 @@ function isDocNameMatch(
 export function computeMetricsForSystem(samples: MRAGSample[]): GapMetrics {
   const total = samples.length;
 
-  let answerCorrect = 0;       // A
-  let formulaCorrect = 0;      // G
-  let docCorrect = 0;          // docLoc
-  let pageCorrect = 0;         // pageLoc
+  let answerCorrect = 0; // A
+  let formulaCorrect = 0; // G
+  let docCorrect = 0; // docLoc
+  let pageCorrect = 0; // pageLoc
 
   for (const s of samples) {
     // Answer Accuracy (A): numeric / string equivalence with relative tolerance
-    if (isAnswerEquivalent(s.gold_answer, s.pred_answer)) {
+    if (isAnswerEquivalent(s.gold_answer as unknown, s.pred_answer as unknown)) {
       answerCorrect++;
     }
 
     // Ground Formula (G): formula equivalence via symbolic-like normalization
-    if (isFormulaEquivalent(s.gold_formula_latex, s.pred_formula_latex)) {
+    if (
+      isFormulaEquivalent(
+        s.gold_formula_latex as unknown,
+        s.pred_formula_latex as unknown
+      )
+    ) {
       formulaCorrect++;
     }
 
     // Doc-level grounding: relaxed document name matching
     const docOk =
-      s.gold_doc_name !== null &&
-      s.pred_doc_name !== null &&
-      s.gold_doc_name.trim() !== "" &&
-      s.pred_doc_name.trim() !== "" &&
-      isDocNameMatch(s.gold_doc_name, s.pred_doc_name);
+      toNonEmptyString(s.gold_doc_name) !== null &&
+      toNonEmptyString(s.pred_doc_name) !== null &&
+      isDocNameMatch(s.gold_doc_name as unknown, s.pred_doc_name as unknown);
 
     if (docOk) {
       docCorrect++;
     }
 
     // Page-level grounding (requires doc also correct), allowing ±1 page
+    const goldPage = toNumberOrNull(s.gold_page as unknown);
+    const predPage = toNumberOrNull(s.pred_page as unknown);
+
     const pageOk =
       docOk &&
-      s.gold_page !== null &&
-      s.pred_page !== null &&
-      Math.abs(s.gold_page - s.pred_page) <= 1;
+      goldPage !== null &&
+      predPage !== null &&
+      Math.abs(goldPage - predPage) <= 1;
 
     if (pageOk) {
       pageCorrect++;
@@ -242,8 +274,7 @@ export function computeMetricsForSystem(samples: MRAGSample[]): GapMetrics {
   const pageLocAccuracy = safeDiv(pageCorrect, total);
 
   // Provenance Accuracy (P) = 0.6 * docLoc + 0.4 * pageLoc
-  const provenanceAccuracy =
-    0.6 * docLocAccuracy + 0.4 * pageLocAccuracy;
+  const provenanceAccuracy = 0.6 * docLocAccuracy + 0.4 * pageLocAccuracy;
 
   // Overall = 0.3 * G + 0.4 * A + 0.3 * P
   const overallScore =
@@ -270,7 +301,7 @@ export function computeMetricsBySystem(
   const grouped: Record<string, MRAGSample[]> = {};
 
   for (const s of samples) {
-    const key = s.system_name ?? "UNKNOWN_SYSTEM";
+    const key = (s.system_name as string) ?? "UNKNOWN_SYSTEM";
     if (!grouped[key]) {
       grouped[key] = [];
     }
