@@ -69,24 +69,23 @@ export const StackedBarChartPanel: React.FC<Props> = ({ metricsBySystem }) => {
                             }}
                         />
                         <Legend />
-                        {/* 颜色与雷达图保持强对比：蓝（G）、橙（A）、绿（P） */}
                         <Bar
                             dataKey="G"
                             name="G contribution"
                             stackId="score"
-                            fill="#2563EB"
+                            fill="#FFB3B3"
                         />
                         <Bar
                             dataKey="A"
                             name="A contribution"
                             stackId="score"
-                            fill="#F97316"
+                            fill="#66B5FF"
                         />
                         <Bar
                             dataKey="P"
                             name="P contribution"
                             stackId="score"
-                            fill="#16A34A"
+                            fill="#0067C8"
                         />
                     </BarChart>
                 </ResponsiveContainer>

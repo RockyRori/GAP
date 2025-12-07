@@ -1,12 +1,18 @@
 # GAP
-GAP System, designed for MRAG-Bench.
+GAP System, designed for Assessing MLLMs Reliability on Engineering Formula Reasoning.
 
-# Evaluation Metrics
-| System   | Total Samples | Ground Formula (G) | Answer Accuracy (A) | Provenance Accuracy (P) | Overall Score |
-| :------- | :------------ | :----------------- | :------------------ | :---------------------- | :------------ |
-| Deepseek | 1             | 100.00%            | 100.00%             | 0.00%                   | 70.00%        |
-| GPT-4o   | 2             | 50.00%             | 100.00%             | 80.00%                  | 79.00%        |
-| GPT-5    | 2             | 0.00%              | 100.00%             | 100.00%                 | 70.00%        |
+## Workflow
+![GAP Overview Framework](example/GAP%20Overview%20Framework.png)
+![GAP System Architecture](example/GAP%20System%20Architecture.png)
+## Dataset
+[PDFs](example/Questions)
 
-# Example
-![GAP Radar Chart](example/GAP%20Radar%20Chart.png)
+## Prompt
+![GAP metrics.csv](example/prompt.txt)
+
+## Result
+![GAP metrics.csv](example/Results/gap-metrics.csv)
+
+![GAP Stacked Bar Chart](example/Results/GAP%20Stacked%20Bar%20Chart.png)
+
+![GAP Radar Chart](example/Results/GAP%20Radar%20Chart.png)
