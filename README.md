@@ -8,10 +8,10 @@ GAP System, designed for Assessing MLLMs Reliability on Engineering Formula Reas
 [PDFs](example/Questions)
 
 ## Prompt
-![GAP metrics.csv](example/prompt.txt)
+[GAP Prompt](example/prompt.txt)
 
 ## Result
-![GAP metrics.csv](example/Results/gap-metrics.csv)
+[GAP metrics.csv](example/Results/gap-metrics.csv)
 
 ![GAP Stacked Bar Chart](example/Results/GAP%20Stacked%20Bar%20Chart.png)
 

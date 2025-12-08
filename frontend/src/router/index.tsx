@@ -4,11 +4,12 @@ import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
 import { PageContainer } from "../components/layout/PageContainer";
 import { HomePage } from "../pages/HomePage";
+import { BuilderPage } from "../pages/BuilderPage";
+import { PromptPage } from "../pages/PromptPage";
 import { UploadPage } from "../pages/UploadPage";
 import { EvaluationPage } from "../pages/EvaluationPage";
 import { ReportPage } from "../pages/ReportPage";
 import { AboutPage } from "../pages/AboutPage";
-import { BuilderPage } from "../pages/BuilderPage";
 
 export const AppRouter: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ export const AppRouter: React.FC = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/build" element={<BuilderPage />} />
+          <Route path="/prompt" element={<PromptPage />} />
           <Route path="/upload" element={<UploadPage />} />
           <Route path="/evaluation" element={<EvaluationPage />} />
           <Route path="/report" element={<ReportPage />} />

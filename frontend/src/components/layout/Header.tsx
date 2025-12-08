@@ -7,11 +7,12 @@ export const Header: React.FC = () => {
       <div className="gap-header-inner">
         <div className="gap-logo">
           <span className="gap-logo-mark">GAP</span>
-          <span className="gap-logo-text">MRAG Bench Evaluator</span>
+          <span className="gap-logo-text">MRAG Evaluating Toolkit</span>
         </div>
         <nav className="gap-nav">
           <Link to="/">Home</Link>
           <Link to="/build">Build</Link>
+          <Link to="/prompt">Prompt</Link>
           <Link to="/upload">Upload</Link>
           <Link to="/evaluation">Evaluation</Link>
           <Link to="/report">Report</Link>

@@ -119,18 +119,18 @@ export const BuilderPage: React.FC = () => {
   // ✅ 修改：导出 answer.json 的字段和顺序
   const handleDownloadAnswer = () => {
     const answerArray = answerSamples.map((s) => ({
-      system_name: s.system_name ?? null,
-      timestamp: s.timestamp ?? null,
+      system_name: null,
+      timestamp: null,
       question_id: s.question_id,
       question_text: s.question_text,
       gold_doc_name: s.gold_doc_name,
-      pred_doc_name: s.pred_doc_name,
+      pred_doc_name: null,
       gold_page: s.gold_page,
-      pred_page: s.pred_page,
+      pred_page: null,
       gold_formula_latex: s.gold_formula_latex,
-      pred_formula_latex: s.pred_formula_latex,
+      pred_formula_latex: null,
       gold_answer: s.gold_answer,
-      pred_answer: s.pred_answer,
+      pred_answer: null,
     }));
 
     downloadJsonReport(answerArray, "answer.json");
@@ -139,8 +139,8 @@ export const BuilderPage: React.FC = () => {
   // ✅ 修改：导出 question.json 的字段和顺序
   const handleDownloadQuestion = () => {
     const questionArray = answerSamples.map((s) => ({
-      system_name: s.system_name ?? null,
-      timestamp: s.timestamp ?? null,
+      system_name: null,
+      timestamp: null,
       question_id: s.question_id,
       question_text: s.question_text,
       pred_doc_name: null,
