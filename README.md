@@ -5,7 +5,7 @@ GAP System, designed for Assessing MLLMs Reliability on Engineering Formula Reas
 ![GAP Overview Framework](example/GAP%20Overview%20Framework.png)
 ![GAP System Architecture](example/GAP%20System%20Architecture.png)
 ## Dataset
-[PDFs](example/Questions)
+[PDFs](example/PDFs)
 
 ## Prompt
 [GAP Prompt](example/prompt.txt)

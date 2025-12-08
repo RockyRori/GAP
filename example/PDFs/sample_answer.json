@@ -1,0 +1,44 @@
+[
+  {
+    "system_name": null,
+    "timestamp": null,
+    "question_id": "Q001",
+    "question_text": "Using the ACE equation ACE = -ΔP_tie - 10 B (f_m - f_s) + ME + T, compute ACE when ΔP_tie = 20 MW, B = -100 MW/0.1 Hz, f_m = 60.05 Hz, f_s = 60.0 Hz, ME = 0 MW, and T = 0 MW.",
+    "gold_doc_name": "Renewable Energy.pdf",
+    "pred_doc_name": null,
+    "gold_page": 3,
+    "pred_page": null,
+    "gold_formula_latex": "\\mathrm{ACE} = -\\Delta P_{\\text{tie}} - 10 B (f_m - f_s) + ME + T",
+    "pred_formula_latex": null,
+    "gold_answer": 30,
+    "pred_answer": null
+  },
+  {
+    "system_name": null,
+    "timestamp": null,
+    "question_id": "Q002",
+    "question_text": "Using the time error equation \\varepsilon_t = \\int_0^T (f(t) - f_{nom}) / f_{nom} \\, dt, compute \\varepsilon_t when system frequency is constant at f(t) = 60.03 Hz, nominal frequency f_{nom} = 60.0 Hz, and T = 300 s.",
+    "gold_doc_name": "Renewable Energy.pdf",
+    "pred_doc_name": null,
+    "gold_page": 4,
+    "pred_page": null,
+    "gold_formula_latex": "\\varepsilon_t = \\int_0^T \\frac{f(t) - f_{\\text{nom}}}{f_{\\text{nom}}} \\, dt",
+    "pred_formula_latex": null,
+    "gold_answer": 0.15,
+    "pred_answer": null
+  },
+  {
+    "system_name": null,
+    "timestamp": null,
+    "question_id": "Q003",
+    "question_text": "Using the AGC PI controller equation \\Delta P_{g,i} = -\\left( K_{P,i} \\cdot ACE + \\frac{1}{T_{I,i}} \\int ACE \\, dt \\right), compute \\Delta P_{g,i} for a constant ACE of 25 MW over 60 s, with K_{P,i} = 0.2 and T_{I,i} = 30 s.",
+    "gold_doc_name": "Renewable Energy.pdf",
+    "pred_doc_name": null,
+    "gold_page": 4,
+    "pred_page": null,
+    "gold_formula_latex": "\\Delta P_{g,i} = -\\left( K_{P,i} \\cdot \\text{ACE} + \\frac{1}{T_{I,i}} \\int \\text{ACE} \\, dt \\right)",
+    "pred_formula_latex": null,
+    "gold_answer": -55,
+    "pred_answer": null
+  }
+]
