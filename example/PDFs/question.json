@@ -4,13 +4,9 @@
     "timestamp": null,
     "question_id": "Q021",
     "question_text": "According to the boundary conditions in Equation (2), the Robin boundary condition is given by \\lambda \\, \\partial T/\\partial n = h (T - T_0). Consider a boundary point where \\lambda = 2.0, \\partial T/\\partial n = 5.0, h = 10.0, and T_0 = 300. Compute the boundary temperature T at this point.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 6,
     "pred_page": null,
-    "gold_formula_latex": "T = T_0 \\; (\\text{Dirichlet}), \\quad \\lambda \\, \\frac{\\partial T}{\\partial n} = 0 \\; (\\text{Neumann}), \\quad \\lambda \\, \\frac{\\partial T}{\\partial n} = h (T - T_0) \\; (\\text{Robin})",
     "pred_formula_latex": null,
-    "gold_answer": 301,
     "pred_answer": null
   },
   {
@@ -18,13 +14,9 @@
     "timestamp": null,
     "question_id": "Q022",
     "question_text": "Using the steady-state heat conduction equation \\frac{\\partial}{\\partial x}(\\lambda \\, \\partial T/\\partial x) + \\frac{\\partial}{\\partial y}(\\lambda \\, \\partial T/\\partial y) + \\sum_{i=1}^{\\Lambda} \\phi_i(x,y) = 0, suppose at a point in the domain we have \\frac{\\partial}{\\partial x}(\\lambda \\, \\partial T/\\partial x) = 6, \\frac{\\partial}{\\partial y}(\\lambda \\, \\partial T/\\partial y) = -4, and \\sum_{i=1}^{\\Lambda} \\phi_i(x,y) = 3. Compute the PDE residual R = \\frac{\\partial}{\\partial x}(\\lambda \\, \\partial T/\\partial x) + \\frac{\\partial}{\\partial y}(\\lambda \\, \\partial T/\\partial y) + \\sum_{i=1}^{\\Lambda} \\phi_i(x,y).",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 5,
     "pred_page": null,
-    "gold_formula_latex": "\\frac{\\partial}{\\partial x}\\left(\\lambda \\, \\frac{\\partial T}{\\partial x}\\right) + \\frac{\\partial}{\\partial y}\\left(\\lambda \\, \\frac{\\partial T}{\\partial y}\\right) + \\sum_{i=1}^{\\Lambda} \\phi_i(x,y) = 0",
     "pred_formula_latex": null,
-    "gold_answer": 5,
     "pred_answer": null
   },
   {
@@ -32,13 +24,9 @@
     "timestamp": null,
     "question_id": "Q023",
     "question_text": "The inverse problem in Equation (3) minimizes the sum of absolute differences between the reconstructed temperature and the sparse measurements. Suppose at three sensor locations the reconstruction errors T - f are 1.5, -0.5, and 2.0 (in Kelvin). Compute the objective value J = |1.5| + |-0.5| + |2.0|.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 6,
     "pred_page": null,
-    "gold_formula_latex": "T^{*} = \\arg\\min_T \\sum_{i=1}^{m} \\left| T(x_{s_i}, y_{s_i} \\mid \\phi_1, \\ldots, \\phi_{\\Lambda}) - f(x_{s_i}, y_{s_i}) \\right|",
     "pred_formula_latex": null,
-    "gold_answer": 4,
     "pred_answer": null
   },
   {
@@ -46,13 +34,9 @@
     "timestamp": null,
     "question_id": "Q024",
     "question_text": "According to the Voronoi-based interpolation in Equation (5), each grid point is assigned the temperature of its nearest sensor. Consider two sensors at p_1 = (0, 0) with temperature m_1 = 310 K and p_2 = (4, 0) with temperature m_2 = 330 K. For a grid point at (1, 0), use the Euclidean distance to determine its interpolated temperature V_t(i,j).",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 10,
     "pred_page": null,
-    "gold_formula_latex": "V_t(i,j) = m_k, \\quad \\text{where } k = \\arg\\min_{1 \\leq \\ell \\leq N_t} \\left\\| (x_i, y_j) - p^t_{\\ell} \\right\\|_2",
     "pred_formula_latex": null,
-    "gold_answer": 310,
     "pred_answer": null
   },
   {
@@ -60,13 +44,9 @@
     "timestamp": null,
     "question_id": "Q025",
     "question_text": "Using the same two sensors as in the previous question, p_1 = (0, 0) with m_1 = 310 K and p_2 = (4, 0) with m_2 = 330 K, consider a grid point at (3.5, 0). According to Equation (5), compute its interpolated temperature V_t(i,j).",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 10,
     "pred_page": null,
-    "gold_formula_latex": "V_t(i,j) = m_k, \\quad \\text{where } k = \\arg\\min_{1 \\leq \\ell \\leq N_t} \\left\\| (x_i, y_j) - p^t_{\\ell} \\right\\|_2",
     "pred_formula_latex": null,
-    "gold_answer": 330,
     "pred_answer": null
   },
   {
@@ -74,13 +54,9 @@
     "timestamp": null,
     "question_id": "Q026",
     "question_text": "The scaled dot-product attention in Equation (6) is defined as \\text{Attention}(Q,K,V) = \\mathrm{Softmax}(QK^{\\mathsf{T}}/\\sqrt{D}) V. Consider a single-dimensional case with Q = [2], K = [1], V = [10], and feature dimension D = 1. Compute the attention output.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 12,
     "pred_page": null,
-    "gold_formula_latex": " \\text{Attention}(Q,K,V) = \\mathrm{Softmax}\\left(\\frac{QK^{\\mathsf{T}}}{\\sqrt{D}}\\right) V",
     "pred_formula_latex": null,
-    "gold_answer": 10,
     "pred_answer": null
   },
   {
@@ -88,13 +64,9 @@
     "timestamp": null,
     "question_id": "Q027",
     "question_text": "Using the same attention definition in Equation (6), consider Q = [1, 0], K = [1, -1], V = [4, 1], and feature dimension D = 1. First compute the unnormalized scores s_j = Q_j K_j, then apply the softmax over [s_1, s_2], and finally compute the attention output y = w_1 V_1 + w_2 V_2. Give the numerical value of y.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 12,
     "pred_page": null,
-    "gold_formula_latex": " \\text{Attention}(Q,K,V) = \\mathrm{Softmax}\\left(\\frac{QK^{\\mathsf{T}}}{\\sqrt{D}}\\right) V",
     "pred_formula_latex": null,
-    "gold_answer": 3.193175735890015,
     "pred_answer": null
   },
   {
@@ -102,13 +74,9 @@
     "timestamp": null,
     "question_id": "Q028",
     "question_text": "The lifting step in Equation (8) is written as u^{(0)} = f_{c0}(V_t). In a simplified scalar case, assume f_{c0}(x) = 3x and a Voronoi-interpolated value V_t = 2.5 at one location. Compute u^{(0)} at this location.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 14,
     "pred_page": null,
-    "gold_formula_latex": "u^{(0)} = f_{c0}(V_t), \\quad u^{(0)} \\in \\mathbb{R}^{C' \\times H \\times W}",
     "pred_formula_latex": null,
-    "gold_answer": 7.5,
     "pred_answer": null
   },
   {
@@ -116,13 +84,9 @@
     "timestamp": null,
     "question_id": "Q029",
     "question_text": "Equation (9) updates the latent feature as u^{(\\ell+1)}(x) = \\sigma(W u^{(\\ell)}(x) + K(u^{(\\ell)})(x)). In a simplified 1D case, let u^{(\\ell)} = 1.2, W = 0.5, K(u^{(\\ell)})(x) = -0.2, and use ReLU as the activation \\sigma(z) = \\max(0, z). Compute u^{(\\ell+1)}.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 14,
     "pred_page": null,
-    "gold_formula_latex": "u^{(\\ell+1)}(x) = \\sigma\\big(W u^{(\\ell)}(x) + K(u^{(\\ell)})(x)\\big)",
     "pred_formula_latex": null,
-    "gold_answer": 0.39999999999999997,
     "pred_answer": null
   },
   {
@@ -130,13 +94,9 @@
     "timestamp": null,
     "question_id": "Q030",
     "question_text": "The spectral multiplication in Equation (13) is given by (R \\cdot \\hat{u}^{(\\ell)})_{k,i} = \\sum_{j=1}^{C'} R_{k,i,j} \\, \\hat{u}^{(\\ell)}_{k,j}. Consider C' = 2 with \\hat{u}^{(\\ell)}_{k,1} = 2.0, \\hat{u}^{(\\ell)}_{k,2} = -1.0, and R_{k,i,1} = 0.5, R_{k,i,2} = 1.5. Compute (R \\cdot \\hat{u}^{(\\ell)})_{k,i}.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 14,
     "pred_page": null,
-    "gold_formula_latex": "(R \\cdot \\hat{u}^{(\\ell)})_{k,i} = \\sum_{j=1}^{C'} R_{k,i,j} \\, \\hat{u}^{(\\ell)}_{k,j}",
     "pred_formula_latex": null,
-    "gold_answer": -0.5,
     "pred_answer": null
   },
   {
@@ -144,13 +104,9 @@
     "timestamp": null,
     "question_id": "Q031",
     "question_text": "The Gaussian heat source in Equation (18) is given by \\phi_i(x,y) = Q_i \\exp\\big(-\\sigma ((x - x_0)^2 + (y - y_0)^2)/r^2\\big) inside the component region. Let Q_i = 100, \\sigma = 1.0, r = 2.0, center (x_0, y_0) = (0, 0), and evaluate \\phi_i at (x, y) = (1, 1). Compute the numerical value of \\phi_i(x,y).",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 17,
     "pred_page": null,
-    "gold_formula_latex": "\\phi_i(x,y) = \\begin{cases} Q_i \\exp\\Big(-\\sigma \\frac{(x - x_0)^2 + (y - y_0)^2}{r^2}\\Big), & (x,y) \\in \\Omega_i, \\\\ 0, & \\text{otherwise.} \\end{cases}",
     "pred_formula_latex": null,
-    "gold_answer": 60.653065971263345,
     "pred_answer": null
   },
   {
@@ -158,13 +114,9 @@
     "timestamp": null,
     "question_id": "Q032",
     "question_text": "Using the same Gaussian heat source definition as in Equation (18) with Q_i = 100, \\sigma = 1.0, r = 2.0, and center (x_0, y_0) = (0, 0), compute \\phi_i at the center point (x, y) = (0, 0).",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 17,
     "pred_page": null,
-    "gold_formula_latex": "\\phi_i(x,y) = \\begin{cases} Q_i \\exp\\Big(-\\sigma \\frac{(x - x_0)^2 + (y - y_0)^2}{r^2}\\Big), & (x,y) \\in \\Omega_i, \\\\ 0, & \\text{otherwise.} \\end{cases}",
     "pred_formula_latex": null,
-    "gold_answer": 100,
     "pred_answer": null
   },
   {
@@ -172,13 +124,9 @@
     "timestamp": null,
     "question_id": "Q033",
     "question_text": "In the new scenario dataset, the thermal conductivity is modeled as \\lambda = 1 + 0.05 (T - 298). For a local temperature T = 320 K, compute the corresponding conductivity \\lambda.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 17,
     "pred_page": null,
-    "gold_formula_latex": "\\lambda = 1 + 0.05 \\times (T - 298)",
     "pred_formula_latex": null,
-    "gold_answer": 2.1,
     "pred_answer": null
   },
   {
@@ -186,13 +134,9 @@
     "timestamp": null,
     "question_id": "Q034",
     "question_text": "The mean absolute error (MAE) in Equation (19) is defined as \\mathrm{MAE} = \\|T_t - \\hat{T}_t\\| / |T_t|. For a 4-point temperature field with ground truth values [300, 305, 310, 315] K and predictions [299, 306, 309, 317] K, compute the MAE.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 19,
     "pred_page": null,
-    "gold_formula_latex": "\\mathrm{MAE} = \\frac{\\|T_t - \\hat{T}_t\\|}{|T_t|}",
     "pred_formula_latex": null,
-    "gold_answer": 1.25,
     "pred_answer": null
   },
   {
@@ -200,13 +144,9 @@
     "timestamp": null,
     "question_id": "Q035",
     "question_text": "The maximum absolute error (Max-AE) in Equation (20) is defined as \\mathrm{Max\\text{-}AE} = \\|T_t - \\hat{T}_t\\|_\\infty. Using the same ground truth [300, 305, 310, 315] K and predictions [299, 306, 309, 317] K as in the previous question, compute the Max-AE.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 19,
     "pred_page": null,
-    "gold_formula_latex": "\\mathrm{Max\\text{-}AE} = \\|T_t - \\hat{T}_t\\|_\\infty",
     "pred_formula_latex": null,
-    "gold_answer": 2,
     "pred_answer": null
   },
   {
@@ -214,13 +154,9 @@
     "timestamp": null,
     "question_id": "Q036",
     "question_text": "Again using the MAE definition from Equation (19), consider a 3-point temperature field with ground truth [298, 302, 306] K and predictions [297.5, 303, 305] K. Compute the MAE.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 19,
     "pred_page": null,
-    "gold_formula_latex": "\\mathrm{MAE} = \\frac{\\|T_t - \\hat{T}_t\\|}{|T_t|}",
     "pred_formula_latex": null,
-    "gold_answer": 0.8333333333333334,
     "pred_answer": null
   },
   {
@@ -228,13 +164,9 @@
     "timestamp": null,
     "question_id": "Q037",
     "question_text": "In the sample-efficiency comparison section, suppose IPTR achieves an MAE of 0.0297 while a baseline method (Vor-UNet) achieves an MAE of 0.0370 under the same training configuration. Compute the ratio r = \\text{MAE}_{\\text{baseline}} / \\text{MAE}_{\\text{IPTR}}.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 25,
     "pred_page": null,
-    "gold_formula_latex": "\\mathrm{MAE} = \\frac{\\|T_t - \\hat{T}_t\\|}{|T_t|}",
     "pred_formula_latex": null,
-    "gold_answer": 1.2457912457912457,
     "pred_answer": null
   },
   {
@@ -242,13 +174,9 @@
     "timestamp": null,
     "question_id": "Q038",
     "question_text": "In the sensor sparsity analysis (Section 4.3.1), assume the reconstruction error (e.g., MAE) is 0.05 when using 9 sensors and 0.04 when using 16 sensors. Compute the absolute improvement in error when increasing the number of sensors from 9 to 16.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 29,
     "pred_page": null,
-    "gold_formula_latex": "N_{\\text{sensors}} \\in \\{9, 16, 25\\}",
     "pred_formula_latex": null,
-    "gold_answer": 0.010000000000000002,
     "pred_answer": null
   },
   {
@@ -256,13 +184,9 @@
     "timestamp": null,
     "question_id": "Q039",
     "question_text": "Table 4 compares two sampling strategies for the HSink case: fixed-reference with MAE = 0.9820 and sliding-reference with MAE = 0.1375. Compute the reduction in MAE achieved by switching to sliding-reference sampling.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 30,
     "pred_page": null,
-    "gold_formula_latex": "\\mathrm{MAE} = \\frac{\\|T_t - \\hat{T}_t\\|}{|T_t|}",
     "pred_formula_latex": null,
-    "gold_answer": 0.8445,
     "pred_answer": null
   },
   {
@@ -270,13 +194,9 @@
     "timestamp": null,
     "question_id": "Q040",
     "question_text": "For the HSink case in Table 4, the fixed-reference sampling strategy yields Max-AE = 5.4610, whereas sliding-reference yields Max-AE = 1.7476. Compute the ratio r = 5.4610 / 1.7476, representing how many times larger the worst-case error is under fixed-reference compared to sliding-reference.",
-    "gold_doc_name": "Aerospace.pdf",
     "pred_doc_name": null,
-    "gold_page": 30,
     "pred_page": null,
-    "gold_formula_latex": "\\mathrm{Max\\text{-}AE} = \\|T_t - \\hat{T}_t\\|_\\infty",
     "pred_formula_latex": null,
-    "gold_answer": 3.1248569466697185,
     "pred_answer": null
   },
   {
@@ -284,13 +204,9 @@
     "timestamp": null,
     "question_id": "Q041",
     "question_text": "Using the ACE equation ACE = -ΔP_tie - 10 B (f_m - f_s) + ME + T, compute ACE when ΔP_tie = -15 MW, B = -80 MW/0.1Hz, f_m = 59.98 Hz, f_s = 60.0 Hz, ME = 0, and T = 0.",
-    "gold_doc_name": "Renewable Energy.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "ACE = -\\Delta P_{tie} - 10 B (f_m - f_s) + ME + T",
     "pred_formula_latex": null,
-    "gold_answer": -31,
     "pred_answer": null
   },
   {
@@ -298,13 +214,9 @@
     "timestamp": null,
     "question_id": "Q042",
     "question_text": "Using Equation (1) for frequency bias B, compute the frequency bias contribution term -10 B (f_m - f_s) when B = -120 MW/0.1Hz and the frequency deviation is f_m - f_s = 0.03 Hz.",
-    "gold_doc_name": "Renewable Energy.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "-10 B (f_m - f_s)",
     "pred_formula_latex": null,
-    "gold_answer": 36,
     "pred_answer": null
   },
   {
@@ -312,13 +224,9 @@
     "timestamp": null,
     "question_id": "Q043",
     "question_text": "Using the time-error equation ε_t = ∫_0^T (f(t) - f_nom) / f_nom dt, compute ε_t for constant frequency f(t) = 60.02 Hz over T = 200 s, with nominal frequency f_nom = 60.00 Hz.",
-    "gold_doc_name": "Renewable Energy.pdf",
     "pred_doc_name": null,
-    "gold_page": 4,
     "pred_page": null,
-    "gold_formula_latex": "\\varepsilon_t = \\int_0^T \\frac{f(t) - f_{nom}}{f_{nom}} dt",
     "pred_formula_latex": null,
-    "gold_answer": 0.06666666666666667,
     "pred_answer": null
   },
   {
@@ -326,13 +234,9 @@
     "timestamp": null,
     "question_id": "Q044",
     "question_text": "Using the AGC PI controller ΔP_g,i = -(K_P,i · ACE + (1/T_I,i) ∫ ACE dt), compute ΔP_g,i when ACE is held constant at 12 MW for 30 seconds, K_P,i = 0.3, and T_I,i = 15 s.",
-    "gold_doc_name": "Renewable Energy.pdf",
     "pred_doc_name": null,
-    "gold_page": 4,
     "pred_page": null,
-    "gold_formula_latex": "\\Delta P_{g,i} = -\\left( K_{P,i} \\cdot ACE + \\frac{1}{T_{I,i}} \\int ACE \\, dt \\right)",
     "pred_formula_latex": null,
-    "gold_answer": -30,
     "pred_answer": null
   },
   {
@@ -340,13 +244,9 @@
     "timestamp": null,
     "question_id": "Q045",
     "question_text": "A solar PV plant offers 30 MW of regulation up capacity by maintaining headroom between output and MPP. If its available power is 290 MW but it is dispatched at 260 MW, compute its real headroom.",
-    "gold_doc_name": "Renewable Energy.pdf",
     "pred_doc_name": null,
-    "gold_page": 6,
     "pred_page": null,
-    "gold_formula_latex": "Headroom = P_{available} - P_{output}",
     "pred_formula_latex": null,
-    "gold_answer": 30,
     "pred_answer": null
   },
   {
@@ -354,13 +254,9 @@
     "timestamp": null,
     "question_id": "Q046",
     "question_text": "A wind plant can provide regulation down by curtailing output. If its current output is 120 MW and the AGC system issues a -15 MW signal, compute the new target power output.",
-    "gold_doc_name": "Renewable Energy.pdf",
     "pred_doc_name": null,
-    "gold_page": 6,
     "pred_page": null,
-    "gold_formula_latex": "P_{new} = P_{current} + \\Delta P_{reg}",
     "pred_formula_latex": null,
-    "gold_answer": 105,
     "pred_answer": null
   },
   {
@@ -368,13 +264,9 @@
     "timestamp": null,
     "question_id": "Q047",
     "question_text": "A PV plant’s regulation accuracy ranges from 87% to 94%. If the commanded AGC response is 20 MW and the plant responds at 92% accuracy, compute the delivered regulation.",
-    "gold_doc_name": "Renewable Energy.pdf",
     "pred_doc_name": null,
-    "gold_page": 6,
     "pred_page": null,
-    "gold_formula_latex": "P_{delivered} = Accuracy \\times P_{command}",
     "pred_formula_latex": null,
-    "gold_answer": 18.4,
     "pred_answer": null
   },
   {
@@ -382,13 +274,9 @@
     "timestamp": null,
     "question_id": "Q048",
     "question_text": "According to the ERCOT 2017 statistics, regulation down price exceeded energy price for 806 hours (9.2% of the year). Compute the total hours in a year assumed by this statistic.",
-    "gold_doc_name": "Renewable Energy.pdf",
     "pred_doc_name": null,
-    "gold_page": 11,
     "pred_page": null,
-    "gold_formula_latex": "Percentage = Hours / TotalHours",
     "pred_formula_latex": null,
-    "gold_answer": 8760,
     "pred_answer": null
   },
   {
@@ -396,13 +284,9 @@
     "timestamp": null,
     "question_id": "Q049",
     "question_text": "Using the co-optimization example in Table 1, compute the total cost of the not-co-optimized case: ($3 × 40 MW) + ($3 × 10 MW) + ($6 × 5 MW).",
-    "gold_doc_name": "Renewable Energy.pdf",
     "pred_doc_name": null,
-    "gold_page": 14,
     "pred_page": null,
-    "gold_formula_latex": "Cost = 3\\times40 + 3\\times10 + 6\\times5",
     "pred_formula_latex": null,
-    "gold_answer": 180,
     "pred_answer": null
   },
   {
@@ -410,13 +294,9 @@
     "timestamp": null,
     "question_id": "Q050",
     "question_text": "Using the co-optimized market example in Table 1, compute the cost: ($3 × 35 MW) + ($3 × 15 MW) + ($2 × 5 MW).",
-    "gold_doc_name": "Renewable Energy.pdf",
     "pred_doc_name": null,
-    "gold_page": 14,
     "pred_page": null,
-    "gold_formula_latex": "Cost = 3\\times35 + 3\\times15 + 2\\times5",
     "pred_formula_latex": null,
-    "gold_answer": 160,
     "pred_answer": null
   },
   {
@@ -424,13 +304,9 @@
     "timestamp": null,
     "question_id": "Q051",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.00, n2=1.30, and incidence angle theta1=10 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 7.676257253054148,
     "pred_answer": null
   },
   {
@@ -438,13 +314,9 @@
     "timestamp": null,
     "question_id": "Q052",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.05, n2=1.32, and incidence angle theta1=13 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 10.307927149631578,
     "pred_answer": null
   },
   {
@@ -452,13 +324,9 @@
     "timestamp": null,
     "question_id": "Q053",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.10, n2=1.34, and incidence angle theta1=16 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 13.077538862691533,
     "pred_answer": null
   },
   {
@@ -466,13 +334,9 @@
     "timestamp": null,
     "question_id": "Q054",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.15, n2=1.36, and incidence angle theta1=19 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 15.979690431869432,
     "pred_answer": null
   },
   {
@@ -480,13 +344,9 @@
     "timestamp": null,
     "question_id": "Q055",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.20, n2=1.30, and incidence angle theta1=22 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 20.230070598992985,
     "pred_answer": null
   },
   {
@@ -494,13 +354,9 @@
     "timestamp": null,
     "question_id": "Q056",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.00, n2=1.32, and incidence angle theta1=25 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 18.67292483191335,
     "pred_answer": null
   },
   {
@@ -508,13 +364,9 @@
     "timestamp": null,
     "question_id": "Q057",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.05, n2=1.34, and incidence angle theta1=28 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 21.584284199257585,
     "pred_answer": null
   },
   {
@@ -522,13 +374,9 @@
     "timestamp": null,
     "question_id": "Q058",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.10, n2=1.36, and incidence angle theta1=31 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 24.61853551088822,
     "pred_answer": null
   },
   {
@@ -536,13 +384,9 @@
     "timestamp": null,
     "question_id": "Q059",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.15, n2=1.30, and incidence angle theta1=34 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 29.648034667248293,
     "pred_answer": null
   },
   {
@@ -550,13 +394,9 @@
     "timestamp": null,
     "question_id": "Q060",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.20, n2=1.32, and incidence angle theta1=37 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 33.1685999995444,
     "pred_answer": null
   },
   {
@@ -564,13 +404,9 @@
     "timestamp": null,
     "question_id": "Q061",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.00, n2=1.34, and incidence angle theta1=40 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 28.665304048705835,
     "pred_answer": null
   },
   {
@@ -578,13 +414,9 @@
     "timestamp": null,
     "question_id": "Q062",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.05, n2=1.36, and incidence angle theta1=43 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 31.772165444600336,
     "pred_answer": null
   },
   {
@@ -592,13 +424,9 @@
     "timestamp": null,
     "question_id": "Q063",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.10, n2=1.30, and incidence angle theta1=46 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 37.493551758155874,
     "pred_answer": null
   },
   {
@@ -606,13 +434,9 @@
     "timestamp": null,
     "question_id": "Q064",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.15, n2=1.32, and incidence angle theta1=49 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 41.11040888458158,
     "pred_answer": null
   },
   {
@@ -620,13 +444,9 @@
     "timestamp": null,
     "question_id": "Q065",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.20, n2=1.34, and incidence angle theta1=52 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 44.884609282066506,
     "pred_answer": null
   },
   {
@@ -634,13 +454,9 @@
     "timestamp": null,
     "question_id": "Q066",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.00, n2=1.36, and incidence angle theta1=55 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 37.03607018329979,
     "pred_answer": null
   },
   {
@@ -648,13 +464,9 @@
     "timestamp": null,
     "question_id": "Q067",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.05, n2=1.30, and incidence angle theta1=58 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 43.232612746876356,
     "pred_answer": null
   },
   {
@@ -662,13 +474,9 @@
     "timestamp": null,
     "question_id": "Q068",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.10, n2=1.32, and incidence angle theta1=61 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 46.79005151871488,
     "pred_answer": null
   },
   {
@@ -676,13 +484,9 @@
     "timestamp": null,
     "question_id": "Q069",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.15, n2=1.34, and incidence angle theta1=64 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 50.47555196852785,
     "pred_answer": null
   },
   {
@@ -690,13 +494,9 @@
     "timestamp": null,
     "question_id": "Q070",
     "question_text": "Using Snell's law n1 sin(theta1) = n2 sin(theta2), with n1=1.20, n2=1.36, and incidence angle theta1=67 degrees, compute the refraction angle theta2.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
     "pred_formula_latex": null,
-    "gold_answer": 54.31243599287697,
     "pred_answer": null
   },
   {
@@ -704,13 +504,9 @@
     "timestamp": null,
     "question_id": "Q071",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.500 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 41.810314895778596,
     "pred_answer": null
   },
   {
@@ -718,13 +514,9 @@
     "timestamp": null,
     "question_id": "Q072",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.510 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 41.471823767423416,
     "pred_answer": null
   },
   {
@@ -732,13 +524,9 @@
     "timestamp": null,
     "question_id": "Q073",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.520 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 41.139510414899156,
     "pred_answer": null
   },
   {
@@ -746,13 +534,9 @@
     "timestamp": null,
     "question_id": "Q074",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.530 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 40.813183758030426,
     "pred_answer": null
   },
   {
@@ -760,13 +544,9 @@
     "timestamp": null,
     "question_id": "Q075",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.540 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 40.49266149200838,
     "pred_answer": null
   },
   {
@@ -774,13 +554,9 @@
     "timestamp": null,
     "question_id": "Q076",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.550 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 40.177769540147885,
     "pred_answer": null
   },
   {
@@ -788,13 +564,9 @@
     "timestamp": null,
     "question_id": "Q077",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.500 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 41.810314895778596,
     "pred_answer": null
   },
   {
@@ -802,13 +574,9 @@
     "timestamp": null,
     "question_id": "Q078",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.510 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 41.471823767423416,
     "pred_answer": null
   },
   {
@@ -816,13 +584,9 @@
     "timestamp": null,
     "question_id": "Q079",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.520 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 41.139510414899156,
     "pred_answer": null
   },
   {
@@ -830,13 +594,9 @@
     "timestamp": null,
     "question_id": "Q080",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.530 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 40.813183758030426,
     "pred_answer": null
   },
   {
@@ -844,13 +604,9 @@
     "timestamp": null,
     "question_id": "Q081",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.540 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 40.49266149200838,
     "pred_answer": null
   },
   {
@@ -858,13 +614,9 @@
     "timestamp": null,
     "question_id": "Q082",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.550 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 40.177769540147885,
     "pred_answer": null
   },
   {
@@ -872,13 +624,9 @@
     "timestamp": null,
     "question_id": "Q083",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.500 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 41.810314895778596,
     "pred_answer": null
   },
   {
@@ -886,13 +634,9 @@
     "timestamp": null,
     "question_id": "Q084",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.510 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 41.471823767423416,
     "pred_answer": null
   },
   {
@@ -900,13 +644,9 @@
     "timestamp": null,
     "question_id": "Q085",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.520 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 41.139510414899156,
     "pred_answer": null
   },
   {
@@ -914,13 +654,9 @@
     "timestamp": null,
     "question_id": "Q086",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.530 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 40.813183758030426,
     "pred_answer": null
   },
   {
@@ -928,13 +664,9 @@
     "timestamp": null,
     "question_id": "Q087",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.540 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 40.49266149200838,
     "pred_answer": null
   },
   {
@@ -942,13 +674,9 @@
     "timestamp": null,
     "question_id": "Q088",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.550 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 40.177769540147885,
     "pred_answer": null
   },
   {
@@ -956,13 +684,9 @@
     "timestamp": null,
     "question_id": "Q089",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.500 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 41.810314895778596,
     "pred_answer": null
   },
   {
@@ -970,13 +694,9 @@
     "timestamp": null,
     "question_id": "Q090",
     "question_text": "Using the critical-angle formula sin(theta_c)=n2/n1 for total internal reflection, compute theta_c for n1=1.510 and n2=1.0.",
-    "gold_doc_name": "Physics.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\sin\\theta_c = n_2 / n_1",
     "pred_formula_latex": null,
-    "gold_answer": 41.471823767423416,
     "pred_answer": null
   },
   {
@@ -984,13 +704,9 @@
     "timestamp": null,
     "question_id": "Q091",
     "question_text": "Using Kepler’s third law P^2 = a^3 for objects orbiting the Sun (with P in Earth years and a in AU), what is the orbital period P of a planet with semimajor axis a = 1 AU (Earth’s orbit)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 95,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 1,
     "pred_answer": null
   },
   {
@@ -998,13 +714,9 @@
     "timestamp": null,
     "question_id": "Q092",
     "question_text": "According to the worked example for Mars in the text, Mars has orbital period P = 1.88 Earth years. Using Kepler’s third law P^2 = a^3, what is Mars’ semimajor axis a in AU?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 74,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 1.52,
     "pred_answer": null
   },
   {
@@ -1012,13 +724,9 @@
     "timestamp": null,
     "question_id": "Q093",
     "question_text": "Using Kepler’s third law P^2 = a^3, the text considers an object with semimajor axis a = 50 AU. According to the example, what is the approximate orbital period P of this object (in years)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 74,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 350,
     "pred_answer": null
   },
   {
@@ -1026,13 +734,9 @@
     "timestamp": null,
     "question_id": "Q094",
     "question_text": "In the Check Your Learning question, an asteroid has semimajor axis a = 3 AU. Using Kepler’s third law P^2 = a^3, what is its orbital period P in Earth years (rounded to two decimal places)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 75,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 5.2,
     "pred_answer": null
   },
   {
@@ -1040,13 +744,9 @@
     "timestamp": null,
     "question_id": "Q095",
     "question_text": "In the example applying Kepler’s third law, Venus has orbital period P = 0.62 year and semimajor axis a = 0.72 AU. According to the text, what is P^2 for Venus (rounded to two decimal places)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 75,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 0.38,
     "pred_answer": null
   },
   {
@@ -1054,13 +754,9 @@
     "timestamp": null,
     "question_id": "Q096",
     "question_text": "In the same example, what is a^3 for Venus with a = 0.72 AU (rounded to two decimal places), as given in the text?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 75,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 0.37,
     "pred_answer": null
   },
   {
@@ -1068,13 +764,9 @@
     "timestamp": null,
     "question_id": "Q097",
     "question_text": "For Earth, the text states that its orbital period is P = 1.00 year and semimajor axis is a = 1.00 AU. According to Kepler’s third law, what is P^2 for Earth?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 75,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 1,
     "pred_answer": null
   },
   {
@@ -1082,13 +774,9 @@
     "timestamp": null,
     "question_id": "Q098",
     "question_text": "For Earth with semimajor axis a = 1.00 AU, what is a^3, as used to verify Kepler’s third law in the text?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 75,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 1,
     "pred_answer": null
   },
   {
@@ -1096,13 +784,9 @@
     "timestamp": null,
     "question_id": "Q099",
     "question_text": "In the Check Your Learning example, Saturn has orbital period P = 29.46 years and semimajor axis a = 9.54 AU. According to the solution, what is P^2 for Saturn (rounded to one decimal place)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 75,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 867.9,
     "pred_answer": null
   },
   {
@@ -1110,13 +794,9 @@
     "timestamp": null,
     "question_id": "Q100",
     "question_text": "According to the same example, what is a^3 for Saturn with semimajor axis a = 9.54 AU (rounded to one decimal place)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 75,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 868.3,
     "pred_answer": null
   },
   {
@@ -1124,13 +804,9 @@
     "timestamp": null,
     "question_id": "Q101",
     "question_text": "Using Table 3.2, what is the semimajor axis a (in AU) of Mars?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 87,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 1.52,
     "pred_answer": null
   },
   {
@@ -1138,13 +814,9 @@
     "timestamp": null,
     "question_id": "Q102",
     "question_text": "Using Table 3.2, what is the orbital period P (in years) of Mars?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 87,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 1.88,
     "pred_answer": null
   },
   {
@@ -1152,13 +824,9 @@
     "timestamp": null,
     "question_id": "Q103",
     "question_text": "According to Table 3.2, what is the semimajor axis a (in AU) of Jupiter?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 87,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 5.2,
     "pred_answer": null
   },
   {
@@ -1166,13 +834,9 @@
     "timestamp": null,
     "question_id": "Q104",
     "question_text": "According to Table 3.2, what is the orbital period P (in years) of Jupiter?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 87,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 11.86,
     "pred_answer": null
   },
   {
@@ -1180,13 +844,9 @@
     "timestamp": null,
     "question_id": "Q105",
     "question_text": "According to Table 3.2, what is the semimajor axis a (in AU) of Saturn?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 87,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 9.54,
     "pred_answer": null
   },
   {
@@ -1194,13 +854,9 @@
     "timestamp": null,
     "question_id": "Q106",
     "question_text": "According to Table 3.2, what is the orbital period P (in years) of Saturn?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 87,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 29.46,
     "pred_answer": null
   },
   {
@@ -1208,13 +864,9 @@
     "timestamp": null,
     "question_id": "Q107",
     "question_text": "According to Table 3.2, what is the orbital period P (in years) of Neptune?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 87,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 164.82,
     "pred_answer": null
   },
   {
@@ -1222,13 +874,9 @@
     "timestamp": null,
     "question_id": "Q108",
     "question_text": "According to Table 3.2, what is the semimajor axis a (in AU) of Neptune?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 87,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 30.06,
     "pred_answer": null
   },
   {
@@ -1236,13 +884,9 @@
     "timestamp": null,
     "question_id": "Q109",
     "question_text": "According to the text on orbits in the solar system, what is Mercury’s orbital period in Earth days?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 86,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 88,
     "pred_answer": null
   },
   {
@@ -1250,13 +894,9 @@
     "timestamp": null,
     "question_id": "Q110",
     "question_text": "According to the text, what is Mercury’s average orbital speed in kilometers per second?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 86,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 48,
     "pred_answer": null
   },
   {
@@ -1264,13 +904,9 @@
     "timestamp": null,
     "question_id": "Q111",
     "question_text": "According to the text, what is Neptune’s orbital period in years?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 86,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 165,
     "pred_answer": null
   },
   {
@@ -1278,13 +914,9 @@
     "timestamp": null,
     "question_id": "Q112",
     "question_text": "According to the text, what is Neptune’s average orbital speed in kilometers per second?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 86,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 5,
     "pred_answer": null
   },
   {
@@ -1292,13 +924,9 @@
     "timestamp": null,
     "question_id": "Q113",
     "question_text": "Newton’s reformulation of Kepler’s third law introduces the masses of the two bodies and can be written a^3 = (M_1 + M_2) P^2. For a planet like Earth orbiting a Sun-like star, the text notes that M_1 + M_2 is approximately what value (in solar masses)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 84,
     "pred_page": null,
-    "gold_formula_latex": "a^3 = (M_1 + M_2) P^2",
     "pred_formula_latex": null,
-    "gold_answer": 1,
     "pred_answer": null
   },
   {
@@ -1306,13 +934,9 @@
     "timestamp": null,
     "question_id": "Q114",
     "question_text": "In Example 3.4, a planet like Earth orbits its star at a = 1 AU with P = 1 year. Using a^3 = (M_1 + M_2) P^2 and neglecting the planet’s mass, what is the mass of the star in units of the Sun’s mass, as found in the text?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 84,
     "pred_page": null,
-    "gold_formula_latex": "a^3 = (M_1 + M_2) P^2",
     "pred_formula_latex": null,
-    "gold_answer": 1,
     "pred_answer": null
   },
   {
@@ -1320,13 +944,9 @@
     "timestamp": null,
     "question_id": "Q115",
     "question_text": "In the Check Your Learning, a star with twice the Sun’s mass has an earthlike planet with orbital period P = 4 years. According to the solution, what is the semimajor axis a of this planet’s orbit in AU (rounded to one decimal place)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 84,
     "pred_page": null,
-    "gold_formula_latex": "a^3 = (M_1 + M_2) P^2",
     "pred_formula_latex": null,
-    "gold_answer": 3.2,
     "pred_answer": null
   },
   {
@@ -1334,13 +954,9 @@
     "timestamp": null,
     "question_id": "Q116",
     "question_text": "In the exercises, one question asks for the average distance from the Sun (semimajor axis a in AU) of an asteroid with orbital period P = 8 years. Using Kepler’s law P^2 = a^3, what is a (rounded to two decimal places)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 99,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 4,
     "pred_answer": null
   },
   {
@@ -1348,13 +964,9 @@
     "timestamp": null,
     "question_id": "Q117",
     "question_text": "Newton’s universal law of gravitation can be written as F_gravity = G M_1 M_2 / R^2. According to the text, if the distance R between two masses is doubled, by what factor does the gravitational force change?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "F_{\\text{gravity}} = G \\dfrac{M_1 M_2}{R^2}",
     "pred_formula_latex": null,
-    "gold_answer": 0.25,
     "pred_answer": null
   },
   {
@@ -1362,13 +974,9 @@
     "timestamp": null,
     "question_id": "Q118",
     "question_text": "Using the same law F_gravity = G M_1 M_2 / R^2, if the distance R between two masses is tripled, by what factor does the gravitational force change?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "F_{\\text{gravity}} = G \\dfrac{M_1 M_2}{R^2}",
     "pred_formula_latex": null,
-    "gold_answer": 0.1111111111111111,
     "pred_answer": null
   },
   {
@@ -1376,13 +984,9 @@
     "timestamp": null,
     "question_id": "Q119",
     "question_text": "According to Example 3.3, if Earth’s volume increased by a factor of 8 while its mass stayed the same, Earth’s radius would double. By what factor would a person’s weight at the surface change?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "F_{\\text{gravity}} = G \\dfrac{M_1 M_2}{R^2}",
     "pred_formula_latex": null,
-    "gold_answer": 0.25,
     "pred_answer": null
   },
   {
@@ -1390,13 +994,9 @@
     "timestamp": null,
     "question_id": "Q120",
     "question_text": "In the Check Your Learning after Example 3.3, if Earth kept its present size but had only one-third of its present mass, by what factor would a person’s weight at the surface change?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "F_{\\text{gravity}} = G \\dfrac{M_1 M_2}{R^2}",
     "pred_formula_latex": null,
-    "gold_answer": 0.3333333333333333,
     "pred_answer": null
   },
   {
@@ -1404,13 +1004,9 @@
     "timestamp": null,
     "question_id": "Q121",
     "question_text": "According to the discussion of Newton’s law, objects at Earth’s surface (one Earth radius from the center) fall with acceleration 9.8 m/s^2. If the same inverse-square law applies, the Moon, at 60 Earth radii, experiences an acceleration smaller by what factor compared to 9.8 m/s^2?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "a \\propto \\dfrac{1}{R^2}",
     "pred_formula_latex": null,
-    "gold_answer": 0.0002777777777777778,
     "pred_answer": null
   },
   {
@@ -1418,13 +1014,9 @@
     "timestamp": null,
     "question_id": "Q122",
     "question_text": "Using the previous result, what is the Moon’s orbital acceleration in units of g (Earth’s surface gravity), expressed as a decimal (about 1/3600 of g, rounded to six decimal places)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "a \\propto \\dfrac{1}{R^2}",
     "pred_formula_latex": null,
-    "gold_answer": 0.000278,
     "pred_answer": null
   },
   {
@@ -1432,13 +1024,9 @@
     "timestamp": null,
     "question_id": "Q123",
     "question_text": "The text states that gravity gives us our sense of weight and that weight depends on the local gravitational acceleration. If an astronaut’s mass is 80 kg, and their weight on Earth corresponds to g = 9.8 m/s^2, what is their weight in newtons on Earth (mass times g)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "F_{\\text{gravity}} = m g",
     "pred_formula_latex": null,
-    "gold_answer": 784,
     "pred_answer": null
   },
   {
@@ -1446,13 +1034,9 @@
     "timestamp": null,
     "question_id": "Q124",
     "question_text": "If the same astronaut from the previous question were standing on a hypothetical planet where the surface gravity is only one-third that of Earth, what would their weight be in newtons (using the result from the previous question and scaling by 1/3)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "F_{\\text{gravity}} = m g",
     "pred_formula_latex": null,
-    "gold_answer": 261.3333333333333,
     "pred_answer": null
   },
   {
@@ -1460,13 +1044,9 @@
     "timestamp": null,
     "question_id": "Q125",
     "question_text": "According to the section on motions of satellites and spacecraft, what is the circular satellite velocity needed to orbit just above Earth’s surface, in kilometers per second?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 89,
     "pred_page": null,
-    "gold_formula_latex": "v_{\\text{circ}} \\approx 8\\,\\text{km/s}",
     "pred_formula_latex": null,
-    "gold_answer": 8,
     "pred_answer": null
   },
   {
@@ -1474,13 +1054,9 @@
     "timestamp": null,
     "question_id": "Q126",
     "question_text": "According to the same section, what is the escape speed from Earth (the speed needed to leave Earth forever) in kilometers per second?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 89,
     "pred_page": null,
-    "gold_formula_latex": "v_{\\text{esc}} \\approx 11\\,\\text{km/s}",
     "pred_formula_latex": null,
-    "gold_answer": 11,
     "pred_answer": null
   },
   {
@@ -1488,13 +1064,9 @@
     "timestamp": null,
     "question_id": "Q127",
     "question_text": "Using the values given in the text, what is the ratio of escape speed to circular satellite velocity at Earth’s surface, v_esc / v_circ (use 11 km/s and 8 km/s and round to three decimal places)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 89,
     "pred_page": null,
-    "gold_formula_latex": "v_{\\text{esc}} \\approx 11\\,\\text{km/s},\\; v_{\\text{circ}} \\approx 8\\,\\text{km/s}",
     "pred_formula_latex": null,
-    "gold_answer": 1.375,
     "pred_answer": null
   },
   {
@@ -1502,13 +1074,9 @@
     "timestamp": null,
     "question_id": "Q128",
     "question_text": "In the exercises, one question asks for the average distance from the Sun of a planet with orbital period P = 45.66 years. Using Kepler’s law P^2 = a^3, what is the semimajor axis a in AU (rounded to two decimal places)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 99,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 12.77,
     "pred_answer": null
   },
   {
@@ -1516,13 +1084,9 @@
     "timestamp": null,
     "question_id": "Q129",
     "question_text": "In the exercises, astronomers discover an icy object with semimajor axis a = 84 AU (object 1996 TL 66). Using Kepler’s law P^2 = a^3, what is its orbital period P in years (rounded to one decimal place)?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 99,
     "pred_page": null,
-    "gold_formula_latex": "P^2 = a^3",
     "pred_formula_latex": null,
-    "gold_answer": 769.9,
     "pred_answer": null
   },
   {
@@ -1530,13 +1094,9 @@
     "timestamp": null,
     "question_id": "Q130",
     "question_text": "In the exercises, one question asks for the semimajor axis of a circle of diameter 24 cm. Since the semimajor axis is half the major axis, what is this semimajor axis in centimeters?",
-    "gold_doc_name": "Astronomy.pdf",
     "pred_doc_name": null,
-    "gold_page": 99,
     "pred_page": null,
-    "gold_formula_latex": "a = \\dfrac{1}{2} \\times \\text{(major axis)}",
     "pred_formula_latex": null,
-    "gold_answer": 12,
     "pred_answer": null
   },
   {
@@ -1544,13 +1104,9 @@
     "timestamp": null,
     "question_id": "Q131",
     "question_text": "Using the SINR formula SINR_i = |h_ii| p_i / (sum_{j!=i} |h_ji| p_j + sigma_i^2), consider a two-user system where |h_11| = 1.0, |h_21| = 0.2, p_1 = 0.1 W, p_2 = 0.05 W, and the noise power at receiver 1 is sigma_1^2 = 0.001. Compute SINR_1.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "\\mathrm{SINR}_i = \\dfrac{|h_{ii}| p_i}{\\sum_{j \\neq i} |h_{ji}| p_j + \\sigma_i^2}",
     "pred_formula_latex": null,
-    "gold_answer": 9.09090909090909,
     "pred_answer": null
   },
   {
@@ -1558,13 +1114,9 @@
     "timestamp": null,
     "question_id": "Q132",
     "question_text": "Using the SINR expression, suppose |h_22| = 0.8, |h_12| = 0.1, p_2 = 0.2 W, p_1 = 0.05 W, and sigma_2^2 = 0.005. Compute SINR_2.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "\\mathrm{SINR}_i = \\dfrac{|h_{ii}| p_i}{\\sum_{j \\neq i} |h_{ji}| p_j + \\sigma_i^2}",
     "pred_formula_latex": null,
-    "gold_answer": 16,
     "pred_answer": null
   },
   {
@@ -1572,13 +1124,9 @@
     "timestamp": null,
     "question_id": "Q133",
     "question_text": "According to the data rate formula R_i(p) = B log2(1 + SINR_i), the system bandwidth is B = 500 kHz and a user has SINR = 10. Compute the transmission rate R_i in bits per second.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "R_i(\\mathbf{p}) = B \\log_2\\!\\bigl(1 + \\mathrm{SINR}_i\\bigr)",
     "pred_formula_latex": null,
-    "gold_answer": 1729715.8093186487,
     "pred_answer": null
   },
   {
@@ -1586,13 +1134,9 @@
     "timestamp": null,
     "question_id": "Q134",
     "question_text": "Using the same rate formula with B = 500 kHz and SINR = 3, compute R_i in bits per second.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "R_i(\\mathbf{p}) = B \\log_2\\!\\bigl(1 + \\mathrm{SINR}_i\\bigr)",
     "pred_formula_latex": null,
-    "gold_answer": 1000000,
     "pred_answer": null
   },
   {
@@ -1600,13 +1144,9 @@
     "timestamp": null,
     "question_id": "Q135",
     "question_text": "If the SINR constraint SINR_i(p) >= SINR_i,min must be satisfied with SINR_i,min = 5 and the denominator sum_{j!=i} |h_ji| p_j + sigma_i^2 equals 0.02, what is the minimum value of the numerator |h_ii| p_i required?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\mathrm{SINR}_i = \\dfrac{|h_{ii}| p_i}{\\sum_{j \\neq i} |h_{ji}| p_j + \\sigma_i^2}",
     "pred_formula_latex": null,
-    "gold_answer": 0.1,
     "pred_answer": null
   },
   {
@@ -1614,13 +1154,9 @@
     "timestamp": null,
     "question_id": "Q136",
     "question_text": "The free-space channel gain is modeled as h_ij = (lambda / (4 pi d_ij))^2. Assume carrier frequency 2.4 GHz so that lambda ≈ 0.125 m, and distance d_ij = 50 m as in the system setup. Compute h_ij.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 2,
     "pred_page": null,
-    "gold_formula_latex": "h_{ij} = \\left(\\dfrac{\\lambda}{4 \\pi d_{ij}}\\right)^2",
     "pred_formula_latex": null,
-    "gold_answer": 3.9578587360288194e-8,
     "pred_answer": null
   },
   {
@@ -1628,13 +1164,9 @@
     "timestamp": null,
     "question_id": "Q137",
     "question_text": "Using the same free-space gain model with lambda = 0.125 m and distance d_ij = 275 m (a link distance appearing in the two-user layout), compute h_ij.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 8,
     "pred_page": null,
-    "gold_formula_latex": "h_{ij} = \\left(\\dfrac{\\lambda}{4 \\pi d_{ij}}\\right)^2",
     "pred_formula_latex": null,
-    "gold_answer": 1.3083830532326675e-9,
     "pred_answer": null
   },
   {
@@ -1642,13 +1174,9 @@
     "timestamp": null,
     "question_id": "Q138",
     "question_text": "The PSNR is defined as PSNR = 10 log10(255^2 / MSE). If the mean-squared error MSE = 100, compute the PSNR in dB.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\mathrm{PSNR} = 10 \\log_{10}\\!\\left(\\dfrac{255^2}{\\mathrm{MSE}}\\right)",
     "pred_formula_latex": null,
-    "gold_answer": 28.130803608679106,
     "pred_answer": null
   },
   {
@@ -1656,13 +1184,9 @@
     "timestamp": null,
     "question_id": "Q139",
     "question_text": "Rearranging the PSNR formula, the MSE can be written as MSE = 255^2 / 10^{PSNR/10}. If PSNR = 30 dB, compute the corresponding MSE.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 3,
     "pred_page": null,
-    "gold_formula_latex": "\\mathrm{PSNR} = 10 \\log_{10}\\!\\left(\\dfrac{255^2}{\\mathrm{MSE}}\\right)",
     "pred_formula_latex": null,
-    "gold_answer": 65.025,
     "pred_answer": null
   },
   {
@@ -1670,13 +1194,9 @@
     "timestamp": null,
     "question_id": "Q140",
     "question_text": "The simplified rate-distortion model used in the paper is F_i(Q_i) = theta_i / (255^2 10^{-Q_i/10}) + beta_i. For the video sequence \"Foreman,\" Table 1 gives theta_i = 2876 and beta_i = 23.6. If Q_i = 35 dB, compute F_i(Q_i) (the coding rate) in the units of the model.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 7,
     "pred_page": null,
-    "gold_formula_latex": "F_i(Q_i) = \\dfrac{\\theta_i}{255^2 10^{-Q_i/10}} + \\beta_i",
     "pred_formula_latex": null,
-    "gold_answer": 163.4648296907998,
     "pred_answer": null
   },
   {
@@ -1684,13 +1204,9 @@
     "timestamp": null,
     "question_id": "Q141",
     "question_text": "For the video sequence \"Football,\" Table 1 reports theta_i = 13870 and beta_i = 493.2. Using the same R-D model and Q_i = 35 dB, compute F_i(Q_i).",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 7,
     "pred_page": null,
-    "gold_formula_latex": "F_i(Q_i) = \\dfrac{\\theta_i}{255^2 10^{-Q_i/10}} + \\beta_i",
     "pred_formula_latex": null,
-    "gold_answer": 1167.7219707271884,
     "pred_answer": null
   },
   {
@@ -1698,13 +1214,9 @@
     "timestamp": null,
     "question_id": "Q142",
     "question_text": "According to the discussion of Fig. 3, at the same transmission rate of about 500 kbps, the \"Football\" sequence achieves roughly 29 dB PSNR while \"Foreman\" reaches about 41 dB. What is the PSNR difference (Foreman minus Football) in dB?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 7,
     "pred_page": null,
-    "gold_formula_latex": "\\mathrm{PSNR} = 10 \\log_{10}\\!\\left(\\dfrac{255^2}{\\mathrm{MSE}}\\right)",
     "pred_formula_latex": null,
-    "gold_answer": 12,
     "pred_answer": null
   },
   {
@@ -1712,13 +1224,9 @@
     "timestamp": null,
     "question_id": "Q143",
     "question_text": "In the quality-driven power allocation problem, each transmit power p_i is constrained by 0 <= p_i <= p_max. If p_max is set to 0.4 W as in the system setup, what is the maximum allowed transmit power for each user?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 7,
     "pred_page": null,
-    "gold_formula_latex": "0 \\le p_i \\le p_{\\max}",
     "pred_formula_latex": null,
-    "gold_answer": 0.4,
     "pred_answer": null
   },
   {
@@ -1726,13 +1234,9 @@
     "timestamp": null,
     "question_id": "Q144",
     "question_text": "In the five-user experiment, user 1 (\"Football\") has minimum PSNR requirement 34 dB and the other four users have minimum requirements 40 dB. What is the average minimum required PSNR across all five users?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 9,
     "pred_page": null,
-    "gold_formula_latex": "Q(\\mathbf{p}) = \\frac{1}{N}\\sum_{i=1}^N Q_i(\\mathbf{p})",
     "pred_formula_latex": null,
-    "gold_answer": 38.8,
     "pred_answer": null
   },
   {
@@ -1740,13 +1244,9 @@
     "timestamp": null,
     "question_id": "Q145",
     "question_text": "In the 20-user scenario, each user has a minimum PSNR requirement of 36 dB. If all requirements are met with equality, what is Q(p), the average PSNR over all users?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 10,
     "pred_page": null,
-    "gold_formula_latex": "Q(\\mathbf{p}) = \\frac{1}{N}\\sum_{i=1}^N Q_i(\\mathbf{p})",
     "pred_formula_latex": null,
-    "gold_answer": 36,
     "pred_answer": null
   },
   {
@@ -1754,13 +1254,9 @@
     "timestamp": null,
     "question_id": "Q146",
     "question_text": "The discounted return is defined as R_t = sum_{tau=0}^∞ gamma^tau r_{t+tau}. Assume gamma = 0.9 and a finite horizon with rewards r_t = 10, r_{t+1} = 8, r_{t+2} = 5, and all later rewards are zero. Compute R_t.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 4,
     "pred_page": null,
-    "gold_formula_latex": "R_t = \\sum_{\\tau=0}^{\\infty} \\gamma^{\\tau} r_{t+\\tau}",
     "pred_formula_latex": null,
-    "gold_answer": 21.25,
     "pred_answer": null
   },
   {
@@ -1768,13 +1264,9 @@
     "timestamp": null,
     "question_id": "Q147",
     "question_text": "Using the same discounted return with gamma = 0.9 and only two non-zero rewards r_t = 20 and r_{t+1} = -5, compute R_t.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 4,
     "pred_page": null,
-    "gold_formula_latex": "R_t = \\sum_{\\tau=0}^{\\infty} \\gamma^{\\tau} r_{t+\\tau}",
     "pred_formula_latex": null,
-    "gold_answer": 15.5,
     "pred_answer": null
   },
   {
@@ -1782,13 +1274,9 @@
     "timestamp": null,
     "question_id": "Q148",
     "question_text": "The Q-learning update is q(s_t,a_t) ← q(s_t,a_t) + delta [ r_{t+1} + gamma max_{a'} q(s_{t+1},a') - q(s_t,a_t) ]. If q(s_t,a_t) = 5.0, delta = 0.5, r_{t+1} = 4.0, gamma = 0.9, and max_{a'} q(s_{t+1},a') = 7.0, compute the updated value q(s_t,a_t).",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 4,
     "pred_page": null,
-    "gold_formula_latex": "q(s_t,a_t) \\leftarrow q(s_t,a_t) + \\delta\\bigl(r_{t+1} + \\gamma \\max_{a'} q(s_{t+1},a') - q(s_t,a_t)\\bigr)",
     "pred_formula_latex": null,
-    "gold_answer": 7.65,
     "pred_answer": null
   },
   {
@@ -1796,13 +1284,9 @@
     "timestamp": null,
     "question_id": "Q149",
     "question_text": "Using the same update rule with q(s_t,a_t) = 2.0, delta = 0.1, r_{t+1} = -1.0, gamma = 0.9, and max_{a'} q(s_{t+1},a') = 3.0, compute the new q(s_t,a_t).",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 4,
     "pred_page": null,
-    "gold_formula_latex": "q(s_t,a_t) \\leftarrow q(s_t,a_t) + \\delta\\bigl(r_{t+1} + \\gamma \\max_{a'} q(s_{t+1},a') - q(s_t,a_t)\\bigr)",
     "pred_formula_latex": null,
-    "gold_answer": 1.97,
     "pred_answer": null
   },
   {
@@ -1810,13 +1294,9 @@
     "timestamp": null,
     "question_id": "Q150",
     "question_text": "The DQN target is y_t^{DQN}(r_t,s_{t+1}) = r_t + gamma max_{a'} Q(s_{t+1}, a', theta_target). If r_t = 3.0, gamma = 0.9, and max_{a'} Q(s_{t+1}, a', theta_target) = 6.0, compute y_t^{DQN}.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 4,
     "pred_page": null,
-    "gold_formula_latex": "y_t^{\\mathrm{DQN}} = r_t + \\gamma \\max_{a'} Q(s_{t+1},a',\\theta_{\\text{target}})",
     "pred_formula_latex": null,
-    "gold_answer": 8.4,
     "pred_answer": null
   },
   {
@@ -1824,13 +1304,9 @@
     "timestamp": null,
     "question_id": "Q151",
     "question_text": "With the same DQN target formula, if r_t = -2.0, gamma = 0.9, and max_{a'} Q(s_{t+1}, a', theta_target) = 5.0, compute y_t^{DQN}.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 4,
     "pred_page": null,
-    "gold_formula_latex": "y_t^{\\mathrm{DQN}} = r_t + \\gamma \\max_{a'} Q(s_{t+1},a',\\theta_{\\text{target}})",
     "pred_formula_latex": null,
-    "gold_answer": 2.5,
     "pred_answer": null
   },
   {
@@ -1838,13 +1314,9 @@
     "timestamp": null,
     "question_id": "Q152",
     "question_text": "The reward is defined as r_t = (1/N) sum_i q_i^t, where q_i^t = Q_i^t if the QoE constraint is met, and q_i^t = -100 otherwise. For N = 2 users with Q_1^t = 42 dB and Q_2^t = 44 dB, both satisfying their requirements, compute r_t.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 6,
     "pred_page": null,
-    "gold_formula_latex": "r_t = \\frac{1}{N}\\sum_i q_i^t,\\quad q_i^t = \\begin{cases}Q_i^t, & I_i^t = 1 \\\\ -100, & \\text{otherwise.}\\end{cases}",
     "pred_formula_latex": null,
-    "gold_answer": 43,
     "pred_answer": null
   },
   {
@@ -1852,13 +1324,9 @@
     "timestamp": null,
     "question_id": "Q153",
     "question_text": "In another slot with two users, suppose user 1 has Q_1^t = 41 dB and satisfies its QoE constraint, while user 2 violates its constraint and is assigned q_2^t = -100. Compute the average reward r_t.",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 6,
     "pred_page": null,
-    "gold_formula_latex": "r_t = \\frac{1}{N}\\sum_i q_i^t,\\quad q_i^t = \\begin{cases}Q_i^t, & I_i^t = 1 \\\\ -100, & \\text{otherwise.}\\end{cases}",
     "pred_formula_latex": null,
-    "gold_answer": -29.5,
     "pred_answer": null
   },
   {
@@ -1866,13 +1334,9 @@
     "timestamp": null,
     "question_id": "Q154",
     "question_text": "The discrete action space for power control is A = {p_max/L, 2 p_max/L, ..., p_max}. If p_max = 0.4 W and L = 10, what is the smallest non-zero power level p_max/L (in watts)?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 5,
     "pred_page": null,
-    "gold_formula_latex": "A = \\left\\{\\frac{p_{\\max}}{L}, \\frac{2p_{\\max}}{L}, \\ldots, p_{\\max}\\right\\}",
     "pred_formula_latex": null,
-    "gold_answer": 0.04,
     "pred_answer": null
   },
   {
@@ -1880,13 +1344,9 @@
     "timestamp": null,
     "question_id": "Q155",
     "question_text": "With the same parameters p_max = 0.4 W and L = 10, what is the largest power level in the action set A?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 5,
     "pred_page": null,
-    "gold_formula_latex": "A = \\left\\{\\frac{p_{\\max}}{L}, \\frac{2p_{\\max}}{L}, \\ldots, p_{\\max}\\right\\}",
     "pred_formula_latex": null,
-    "gold_answer": 0.4,
     "pred_answer": null
   },
   {
@@ -1894,13 +1354,9 @@
     "timestamp": null,
     "question_id": "Q156",
     "question_text": "According to Table 2, what is the experience replay memory size used for training the DQN?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 8,
     "pred_page": null,
-    "gold_formula_latex": "\\text{Experience replay size}=200,\\ \\text{batch size}=8,\\ \\gamma=0.9",
     "pred_formula_latex": null,
-    "gold_answer": 200,
     "pred_answer": null
   },
   {
@@ -1908,13 +1364,9 @@
     "timestamp": null,
     "question_id": "Q157",
     "question_text": "According to Table 2, what is the mini-batch size used for experience replay during training?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 8,
     "pred_page": null,
-    "gold_formula_latex": "\\text{Experience replay size}=200,\\ \\text{batch size}=8,\\ \\gamma=0.9",
     "pred_formula_latex": null,
-    "gold_answer": 8,
     "pred_answer": null
   },
   {
@@ -1922,13 +1374,9 @@
     "timestamp": null,
     "question_id": "Q158",
     "question_text": "Table 2 states that the discount factor gamma used in the DRL training is set to what value?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 8,
     "pred_page": null,
-    "gold_formula_latex": "\\text{Experience replay size}=200,\\ \\text{batch size}=8,\\ \\gamma=0.9",
     "pred_formula_latex": null,
-    "gold_answer": 0.9,
     "pred_answer": null
   },
   {
@@ -1936,13 +1384,9 @@
     "timestamp": null,
     "question_id": "Q159",
     "question_text": "For the two-user case, the number of training episodes is set to what value, according to Table 2?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 8,
     "pred_page": null,
-    "gold_formula_latex": "\\text{Experience replay size}=200,\\ \\text{batch size}=8,\\ \\gamma=0.9",
     "pred_formula_latex": null,
-    "gold_answer": 3000,
     "pred_answer": null
   },
   {
@@ -1950,13 +1394,9 @@
     "timestamp": null,
     "question_id": "Q160",
     "question_text": "In the two-user example, the distance matrix is given as D = [[50, 275], [294, 50]]. What is the distance (in meters) between transmitter 1 and receiver 2?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 8,
     "pred_page": null,
-    "gold_formula_latex": "D = \\begin{bmatrix} 50 & 275 \\\\ 294 & 50 \\end{bmatrix}",
     "pred_formula_latex": null,
-    "gold_answer": 275,
     "pred_answer": null
   },
   {
@@ -1964,13 +1404,9 @@
     "timestamp": null,
     "question_id": "Q161",
     "question_text": "In the five-user scenario, the distance matrix entry d_{15} is reported as 95.2 m. What is this distance between transmitter 1 and receiver 5 (in meters)?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 9,
     "pred_page": null,
-    "gold_formula_latex": "D = \\begin{bmatrix} 50 & 361.9 & 362.9 & 275.7 & 95.2 \\\\ \\cdots & \\cdots & \\cdots & \\cdots & \\cdots \\end{bmatrix}",
     "pred_formula_latex": null,
-    "gold_answer": 95.2,
     "pred_answer": null
   },
   {
@@ -1978,13 +1414,9 @@
     "timestamp": null,
     "question_id": "Q162",
     "question_text": "In the two-user experiments with 1000 simulations, the proposed DRL method achieves a success rate of what percentage?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 8,
     "pred_page": null,
-    "gold_formula_latex": "\\text{success rate} = \\dfrac{\\text{successful trials}}{\\text{total trials}}",
     "pred_formula_latex": null,
-    "gold_answer": 100,
     "pred_answer": null
   },
   {
@@ -1992,13 +1424,9 @@
     "timestamp": null,
     "question_id": "Q163",
     "question_text": "In the same two-user experiments, the random power allocation method achieves a success rate of what percentage?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 8,
     "pred_page": null,
-    "gold_formula_latex": "\\text{success rate} = \\dfrac{\\text{successful trials}}{\\text{total trials}}",
     "pred_formula_latex": null,
-    "gold_answer": 3,
     "pred_answer": null
   },
   {
@@ -2006,13 +1434,9 @@
     "timestamp": null,
     "question_id": "Q164",
     "question_text": "For the maximum power allocation method in the two-user case, what is the reported success rate (in percent)?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 8,
     "pred_page": null,
-    "gold_formula_latex": "\\text{success rate} = \\dfrac{\\text{successful trials}}{\\text{total trials}}",
     "pred_formula_latex": null,
-    "gold_answer": 0,
     "pred_answer": null
   },
   {
@@ -2020,13 +1444,9 @@
     "timestamp": null,
     "question_id": "Q165",
     "question_text": "In the five-user scenario, the proposed multi-agent DRL approach has a success rate of what percentage across all testing episodes?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 9,
     "pred_page": null,
-    "gold_formula_latex": "\\text{success rate} = \\dfrac{\\text{successful trials}}{\\text{total trials}}",
     "pred_formula_latex": null,
-    "gold_answer": 100,
     "pred_answer": null
   },
   {
@@ -2034,13 +1454,9 @@
     "timestamp": null,
     "question_id": "Q166",
     "question_text": "In the five-user case, what is the success rate of the random power allocation method (in percent)?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 10,
     "pred_page": null,
-    "gold_formula_latex": "\\text{success rate} = \\dfrac{\\text{successful trials}}{\\text{total trials}}",
     "pred_formula_latex": null,
-    "gold_answer": 0,
     "pred_answer": null
   },
   {
@@ -2048,13 +1464,9 @@
     "timestamp": null,
     "question_id": "Q167",
     "question_text": "The DNN used to approximate the action-value function has three fully connected hidden layers with 32, 32, and 16 neurons, respectively. What is the total number of hidden neurons?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 7,
     "pred_page": null,
-    "gold_formula_latex": "\\text{Hidden layer sizes} = [32, 32, 16]",
     "pred_formula_latex": null,
-    "gold_answer": 80,
     "pred_answer": null
   },
   {
@@ -2062,13 +1474,9 @@
     "timestamp": null,
     "question_id": "Q168",
     "question_text": "In the video configuration, the group of pictures (GOP) size is set to what value?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 7,
     "pred_page": null,
-    "gold_formula_latex": "\\text{GOP size} = 4",
     "pred_formula_latex": null,
-    "gold_answer": 4,
     "pred_answer": null
   },
   {
@@ -2076,13 +1484,9 @@
     "timestamp": null,
     "question_id": "Q169",
     "question_text": "The agents are randomly located in a square area of 500 m by 500 m. What is the total area of this region in square meters?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 7,
     "pred_page": null,
-    "gold_formula_latex": "\\text{area size} = 500\\ \\text{m} \\times 500\\ \\text{m}",
     "pred_formula_latex": null,
-    "gold_answer": 250000,
     "pred_answer": null
   },
   {
@@ -2090,13 +1494,9 @@
     "timestamp": null,
     "question_id": "Q170",
     "question_text": "According to Table 2, the epsilon in the epsilon-greedy strategy linearly decreases from 0.9 to 0 over 3000 episodes. Assuming perfect linear decay, what is the value of epsilon after 1500 episodes?",
-    "gold_doc_name": "Smart Power Control.pdf",
     "pred_doc_name": null,
-    "gold_page": 8,
     "pred_page": null,
-    "gold_formula_latex": "\\epsilon\\text{-greedy: } \\epsilon \\text{ linearly decreases from }0.9\\text{ to }0",
     "pred_formula_latex": null,
-    "gold_answer": 0.44999999999999996,
     "pred_answer": null
   },
   {
@@ -2104,13 +1504,9 @@
     "timestamp": null,
     "question_id": "Q171",
     "question_text": "Using the linear equation $3x + 5 = 20$, solve for $x$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 43,
     "pred_page": null,
-    "gold_formula_latex": "3x + 5 = 20",
     "pred_formula_latex": null,
-    "gold_answer": 5,
     "pred_answer": null
   },
   {
@@ -2118,13 +1514,9 @@
     "timestamp": null,
     "question_id": "Q172",
     "question_text": "Using the equation $4(x-2) = 3x + 6$, solve for $x$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 43,
     "pred_page": null,
-    "gold_formula_latex": "4(x-2) = 3x + 6",
     "pred_formula_latex": null,
-    "gold_answer": 14,
     "pred_answer": null
   },
   {
@@ -2132,13 +1524,9 @@
     "timestamp": null,
     "question_id": "Q173",
     "question_text": "A line has slope $m = 4$ and passes through the point $(2,3)$. Using the point-slope form $y- y_1 = m(x-x_1)$, find $y$ when $x = 5$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "y - 3 = 4(x-2)",
     "pred_formula_latex": null,
-    "gold_answer": 15,
     "pred_answer": null
   },
   {
@@ -2146,13 +1534,9 @@
     "timestamp": null,
     "question_id": "Q174",
     "question_text": "Using the slope formula $m = \\dfrac{y_2-y_1}{x_2-x_1}$, find the slope of the line through $(1,2)$ and $(5,10)$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "m = \\dfrac{y_2-y_1}{x_2-x_1}",
     "pred_formula_latex": null,
-    "gold_answer": 2,
     "pred_answer": null
   },
   {
@@ -2160,13 +1544,9 @@
     "timestamp": null,
     "question_id": "Q175",
     "question_text": "For the line in standard form $2x + 3y = 12$, find the $y$-intercept.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "2x + 3y = 12",
     "pred_formula_latex": null,
-    "gold_answer": 4,
     "pred_answer": null
   },
   {
@@ -2174,13 +1554,9 @@
     "timestamp": null,
     "question_id": "Q176",
     "question_text": "For the line $2x + 3y = 12$, find the $x$-intercept.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "2x + 3y = 12",
     "pred_formula_latex": null,
-    "gold_answer": 6,
     "pred_answer": null
   },
   {
@@ -2188,13 +1564,9 @@
     "timestamp": null,
     "question_id": "Q177",
     "question_text": "Using the system $y = 2x + 1$ and $y = -x + 10$, find the $x$-coordinate of their intersection point.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "y = 2x + 1,\\quad y = -x + 10",
     "pred_formula_latex": null,
-    "gold_answer": 3,
     "pred_answer": null
   },
   {
@@ -2202,13 +1574,9 @@
     "timestamp": null,
     "question_id": "Q178",
     "question_text": "Solve the system $x + y = 10$ and $x - y = 2$ by elimination. What is the value of $y$?",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "\\begin{cases} x + y = 10 \\\\ x - y = 2 \\end{cases}",
     "pred_formula_latex": null,
-    "gold_answer": 4,
     "pred_answer": null
   },
   {
@@ -2216,13 +1584,9 @@
     "timestamp": null,
     "question_id": "Q179",
     "question_text": "The line $3x - 4y = 12$ is written in standard form. What is the slope of any line parallel to this line?",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "3x - 4y = 12",
     "pred_formula_latex": null,
-    "gold_answer": 0.75,
     "pred_answer": null
   },
   {
@@ -2230,13 +1594,9 @@
     "timestamp": null,
     "question_id": "Q180",
     "question_text": "For the line $3x - 4y = 12$, what is the slope of any line perpendicular to this line?",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "3x - 4y = 12",
     "pred_formula_latex": null,
-    "gold_answer": -1.3333333333333333,
     "pred_answer": null
   },
   {
@@ -2244,13 +1604,9 @@
     "timestamp": null,
     "question_id": "Q181",
     "question_text": "Solve the inequality $2x - 5 < 9$ for $x$ and give the largest integer that satisfies the inequality.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 47,
     "pred_page": null,
-    "gold_formula_latex": "2x - 5 < 9",
     "pred_formula_latex": null,
-    "gold_answer": 6,
     "pred_answer": null
   },
   {
@@ -2258,13 +1614,9 @@
     "timestamp": null,
     "question_id": "Q182",
     "question_text": "Given the compound inequality $-3 \\le x+2 < 5$, how many integer values of $x$ satisfy this inequality?",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 47,
     "pred_page": null,
-    "gold_formula_latex": "-3 \\le x+2 < 5",
     "pred_formula_latex": null,
-    "gold_answer": 8,
     "pred_answer": null
   },
   {
@@ -2272,13 +1624,9 @@
     "timestamp": null,
     "question_id": "Q183",
     "question_text": "Let $f(x) = 2x^2 - 3x + 1$. Compute $f(4)$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 9,
     "pred_page": null,
-    "gold_formula_latex": "f(x) = 2x^2 - 3x + 1",
     "pred_formula_latex": null,
-    "gold_answer": 21,
     "pred_answer": null
   },
   {
@@ -2286,13 +1634,9 @@
     "timestamp": null,
     "question_id": "Q184",
     "question_text": "For the function $f(x) = 5x - 7$, find the value of $x$ such that $f(x) = 18$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 9,
     "pred_page": null,
-    "gold_formula_latex": "f(x) = 5x - 7",
     "pred_formula_latex": null,
-    "gold_answer": 5,
     "pred_answer": null
   },
   {
@@ -2300,13 +1644,9 @@
     "timestamp": null,
     "question_id": "Q185",
     "question_text": "A savings account balance is modeled by $P(t) = 100(1.05)^t$, where $t$ is measured in years. Find $P(2)$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 19,
     "pred_page": null,
-    "gold_formula_latex": "P(t) = 100(1.05)^t",
     "pred_formula_latex": null,
-    "gold_answer": 110.25,
     "pred_answer": null
   },
   {
@@ -2314,13 +1654,9 @@
     "timestamp": null,
     "question_id": "Q186",
     "question_text": "Consider the arithmetic sequence defined by $a_n = 3n - 1$. Find $a_7$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 13,
     "pred_page": null,
-    "gold_formula_latex": "a_n = 3n - 1",
     "pred_formula_latex": null,
-    "gold_answer": 20,
     "pred_answer": null
   },
   {
@@ -2328,13 +1664,9 @@
     "timestamp": null,
     "question_id": "Q187",
     "question_text": "A geometric sequence is defined by $a_n = 2\\cdot 4^{n-1}$. Compute $a_4$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 13,
     "pred_page": null,
-    "gold_formula_latex": "a_n = 2\\cdot 4^{n-1}",
     "pred_formula_latex": null,
-    "gold_answer": 128,
     "pred_answer": null
   },
   {
@@ -2342,13 +1674,9 @@
     "timestamp": null,
     "question_id": "Q188",
     "question_text": "A quantity decays according to $Q(t) = 80\\left(\\tfrac{1}{2}\\right)^{t/3}$. Find $Q(3)$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 19,
     "pred_page": null,
-    "gold_formula_latex": "Q(t) = 80\\left(\\tfrac{1}{2}\\right)^{t/3}",
     "pred_formula_latex": null,
-    "gold_answer": 40,
     "pred_answer": null
   },
   {
@@ -2356,13 +1684,9 @@
     "timestamp": null,
     "question_id": "Q189",
     "question_text": "The balance in an account is modeled by $A = 500(1+0.04)^5$. Compute $A$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 19,
     "pred_page": null,
-    "gold_formula_latex": "A = 500(1+0.04)^5",
     "pred_formula_latex": null,
-    "gold_answer": 608.3262144000001,
     "pred_answer": null
   },
   {
@@ -2370,13 +1694,9 @@
     "timestamp": null,
     "question_id": "Q190",
     "question_text": "A model for exponential decay is $N(t) = 200(0.8)^t$. Find $N(4)$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 19,
     "pred_page": null,
-    "gold_formula_latex": "N(t) = 200(0.8)^t",
     "pred_formula_latex": null,
-    "gold_answer": 81.92000000000002,
     "pred_answer": null
   },
   {
@@ -2384,13 +1704,9 @@
     "timestamp": null,
     "question_id": "Q191",
     "question_text": "Solve the equation $5(2x-1) - 3(x+4) = 7$ for $x$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 43,
     "pred_page": null,
-    "gold_formula_latex": "5(2x-1) - 3(x+4) = 7",
     "pred_formula_latex": null,
-    "gold_answer": 3.4285714285714284,
     "pred_answer": null
   },
   {
@@ -2398,13 +1714,9 @@
     "timestamp": null,
     "question_id": "Q192",
     "question_text": "Solve the system $2x + 3y = 7$ and $-x + 2y = 4$. What is the value of $y$?",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "\\begin{cases} 2x + 3y = 7 \\\\ -x + 2y = 4 \\end{cases}",
     "pred_formula_latex": null,
-    "gold_answer": 2.142857142857143,
     "pred_answer": null
   },
   {
@@ -2412,13 +1724,9 @@
     "timestamp": null,
     "question_id": "Q193",
     "question_text": "A line is given by $y = -3x + 12$. What is its $y$-intercept?",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "y = -3x + 12",
     "pred_formula_latex": null,
-    "gold_answer": 12,
     "pred_answer": null
   },
   {
@@ -2426,13 +1734,9 @@
     "timestamp": null,
     "question_id": "Q194",
     "question_text": "Rewrite $4x + 2y = 10$ in slope-intercept form and state the slope of the line.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 82,
     "pred_page": null,
-    "gold_formula_latex": "4x + 2y = 10",
     "pred_formula_latex": null,
-    "gold_answer": -2,
     "pred_answer": null
   },
   {
@@ -2440,13 +1744,9 @@
     "timestamp": null,
     "question_id": "Q195",
     "question_text": "Let $f(x) = -2x + 9$. Find the value of $x$ for which $f(x) = 1$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 9,
     "pred_page": null,
-    "gold_formula_latex": "f(x) = -2x + 9",
     "pred_formula_latex": null,
-    "gold_answer": 4,
     "pred_answer": null
   },
   {
@@ -2454,13 +1754,9 @@
     "timestamp": null,
     "question_id": "Q196",
     "question_text": "An arithmetic sequence is defined recursively by $a_1 = 5$ and $a_{n+1} = a_n + 3$. Find $a_6$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 13,
     "pred_page": null,
-    "gold_formula_latex": "a_{n+1} = a_n + 3",
     "pred_formula_latex": null,
-    "gold_answer": 20,
     "pred_answer": null
   },
   {
@@ -2468,13 +1764,9 @@
     "timestamp": null,
     "question_id": "Q197",
     "question_text": "A geometric sequence is defined by $a_1 = 9$ and $a_{n+1} = 3a_n$. Find $a_4$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 13,
     "pred_page": null,
-    "gold_formula_latex": "a_{n+1} = 3a_n",
     "pred_formula_latex": null,
-    "gold_answer": 243,
     "pred_answer": null
   },
   {
@@ -2482,13 +1774,9 @@
     "timestamp": null,
     "question_id": "Q198",
     "question_text": "Solve the inequality $3(x-2) \\ge 2x + 1$ and give the smallest integer solution.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 47,
     "pred_page": null,
-    "gold_formula_latex": "3(x-2) \\ge 2x + 1",
     "pred_formula_latex": null,
-    "gold_answer": 7,
     "pred_answer": null
   },
   {
@@ -2496,13 +1784,9 @@
     "timestamp": null,
     "question_id": "Q199",
     "question_text": "Solve the equation $\\dfrac{x}{3} + 2 = 5$ for $x$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 43,
     "pred_page": null,
-    "gold_formula_latex": "\\dfrac{x}{3} + 2 = 5",
     "pred_formula_latex": null,
-    "gold_answer": 9,
     "pred_answer": null
   },
   {
@@ -2510,13 +1794,9 @@
     "timestamp": null,
     "question_id": "Q200",
     "question_text": "Solve the equation $4 - (x-3) = 2x$ for $x$.",
-    "gold_doc_name": "Algebra.pdf",
     "pred_doc_name": null,
-    "gold_page": 43,
     "pred_page": null,
-    "gold_formula_latex": "4 - (x-3) = 2x",
     "pred_formula_latex": null,
-    "gold_answer": 2.3333333333333335,
     "pred_answer": null
   },
   {
@@ -2524,13 +1804,9 @@
     "timestamp": null,
     "question_id": "Q201",
     "question_text": "Using the training energy consumption equation E_{ES} = \\sum_{i=1}^{C} (\\alpha_i (P_i^{E})^{\\beta_i} + \\gamma_i (t_i^{E})^{\\delta_i} + \\eta_i P_i^{E} t_i^{E}), consider a single edge server (C = 1) with power P_1^{E} = 125 W and training time t_1^{E} = 2 h. Let \\alpha_1 = 0.5, \\beta_1 = 1, \\gamma_1 = 0.2, \\delta_1 = 2, and \\eta_1 = 0.01. What is E_{ES} for this edge server?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 7,
     "pred_page": null,
-    "gold_formula_latex": "E_{ES} = \\sum_{i=1}^{C} \\left( \\alpha_i (P_i^{E})^{\\beta_i} + \\gamma_i (t_i^{E})^{\\delta_i} + \\eta_i P_i^{E} t_i^{E} \\right)",
     "pred_formula_latex": null,
-    "gold_answer": 65.8,
     "pred_answer": null
   },
   {
@@ -2538,13 +1814,9 @@
     "timestamp": null,
     "question_id": "Q202",
     "question_text": "Again using the training energy equation E_{ES} = \\sum_{i=1}^{C} (\\alpha_i (P_i^{E})^{\\beta_i} + \\gamma_i (t_i^{E})^{\\delta_i} + \\eta_i P_i^{E} t_i^{E}), suppose there are C = 2 edge servers. For server 1, P_1^{E} = 100 W, t_1^{E} = 1.5 h, \\alpha_1 = 0.4, \\beta_1 = 1, \\gamma_1 = 0.1, \\delta_1 = 2, and \\eta_1 = 0.02. For server 2, P_2^{E} = 80 W, t_2^{E} = 1 h, \\alpha_2 = 0.3, \\beta_2 = 1, \\gamma_2 = 0.15, \\delta_2 = 2, and \\eta_2 = 0.015. What is the total E_{ES} over both servers?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 7,
     "pred_page": null,
-    "gold_formula_latex": "E_{ES} = \\sum_{i=1}^{C} \\left( \\alpha_i (P_i^{E})^{\\beta_i} + \\gamma_i (t_i^{E})^{\\delta_i} + \\eta_i P_i^{E} t_i^{E} \\right)",
     "pred_formula_latex": null,
-    "gold_answer": 68.575,
     "pred_answer": null
   },
   {
@@ -2552,13 +1824,9 @@
     "timestamp": null,
     "question_id": "Q203",
     "question_text": "The aggregation energy consumption in the cloud is modeled as E_{CS} = \\lambda (P_{CS})^{\\mu} + \\nu (T_{CS})^{\\omega} + \\kappa P_{CS} T_{CS}. If the cloud server uses power P_{CS} = 200 W for an aggregation time T_{CS} = 3 h with parameters \\lambda = 0.6, \\mu = 1, \\nu = 0.25, \\omega = 2, and \\kappa = 0.02, what is E_{CS}?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 7,
     "pred_page": null,
-    "gold_formula_latex": "E_{CS} = \\lambda (P_{CS})^{\\mu} + \\nu (T_{CS})^{\\omega} + \\kappa P_{CS} T_{CS}",
     "pred_formula_latex": null,
-    "gold_answer": 134.25,
     "pred_answer": null
   },
   {
@@ -2566,13 +1834,9 @@
     "timestamp": null,
     "question_id": "Q204",
     "question_text": "Using the same aggregation energy equation E_{CS} = \\lambda (P_{CS})^{\\mu} + \\nu (T_{CS})^{\\omega} + \\kappa P_{CS} T_{CS}, suppose P_{CS} = 150 W, T_{CS} = 2.5 h, \\lambda = 0.5, \\mu = 1, \\nu = 0.3, \\omega = 2, and \\kappa = 0.015. What is the resulting E_{CS}?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 7,
     "pred_page": null,
-    "gold_formula_latex": "E_{CS} = \\lambda (P_{CS})^{\\mu} + \\nu (T_{CS})^{\\omega} + \\kappa P_{CS} T_{CS}",
     "pred_formula_latex": null,
-    "gold_answer": 82.5,
     "pred_answer": null
   },
   {
@@ -2580,13 +1844,9 @@
     "timestamp": null,
     "question_id": "Q205",
     "question_text": "According to the total energy equation E = E_{ES} + E_{CS}, if the model training energy is E_{ES} = 300 (in suitable units) and the aggregation energy is E_{CS} = 120, what is the total energy E consumed by the FedShufde framework?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 7,
     "pred_page": null,
-    "gold_formula_latex": "E = E_{ES} + E_{CS}",
     "pred_formula_latex": null,
-    "gold_answer": 420,
     "pred_answer": null
   },
   {
@@ -2594,13 +1854,9 @@
     "timestamp": null,
     "question_id": "Q206",
     "question_text": "The Laplace mechanism in differential privacy is defined as M(D) = f(D) + \\mathrm{Lap}(0, \\Delta f / \\varepsilon). If a query has true value f(D) = 10, what is the expected (mean) value of M(D), regardless of the scale parameter?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 4,
     "pred_page": null,
-    "gold_formula_latex": "M(D) = f(D) + \\mathrm{Lap}(0, \\Delta f / \\varepsilon)",
     "pred_formula_latex": null,
-    "gold_answer": 10,
     "pred_answer": null
   },
   {
@@ -2608,13 +1864,9 @@
     "timestamp": null,
     "question_id": "Q207",
     "question_text": "In the Laplace mechanism M(D) = f(D) + \\mathrm{Lap}(0, \\Delta f / \\varepsilon), the scale parameter of the Laplace noise is b = \\Delta f / \\varepsilon. If \\Delta f = 5 and \\varepsilon = 0.5, what is the value of b?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 4,
     "pred_page": null,
-    "gold_formula_latex": "M(D) = f(D) + \\mathrm{Lap}(0, \\Delta f / \\varepsilon)",
     "pred_formula_latex": null,
-    "gold_answer": 10,
     "pred_answer": null
   },
   {
@@ -2622,13 +1874,9 @@
     "timestamp": null,
     "question_id": "Q208",
     "question_text": "The Gaussian mechanism in the paper is written as M(D) = f(D) + \\mathcal{N}(0, \\Delta_f^2 / \\varepsilon^2). If \\Delta_f = 3 and \\varepsilon = 0.75, what is the variance \\Delta_f^2 / \\varepsilon^2 of the added Gaussian noise?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 4,
     "pred_page": null,
-    "gold_formula_latex": "M(D) = f(D) + \\mathcal{N}(0, \\Delta_f^2 / \\varepsilon^2)",
     "pred_formula_latex": null,
-    "gold_answer": 16,
     "pred_answer": null
   },
   {
@@ -2636,13 +1884,9 @@
     "timestamp": null,
     "question_id": "Q209",
     "question_text": "The gradient clipping operation is defined as \\pi(\\Delta, S) \\triangleq \\Delta \\min\\left(1, \\frac{S}{\\lVert \\Delta \\rVert_2}\\right). If the gradient vector has norm \\lVert \\Delta \\rVert_2 = 5 and the clipping threshold is S = 3, what is the norm of the clipped gradient \\lVert \\pi(\\Delta, S) \\rVert_2?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 6,
     "pred_page": null,
-    "gold_formula_latex": "\\pi(\\Delta, S) \\triangleq \\Delta \\min\\left(1, \\frac{S}{\\lVert \\Delta \\rVert_2}\\right)",
     "pred_formula_latex": null,
-    "gold_answer": 3,
     "pred_answer": null
   },
   {
@@ -2650,13 +1894,9 @@
     "timestamp": null,
     "question_id": "Q210",
     "question_text": "Using the same clipping rule \\pi(\\Delta, S) \\triangleq \\Delta \\min\\left(1, \\frac{S}{\\lVert \\Delta \\rVert_2}\\right), suppose \\lVert \\Delta \\rVert_2 = 1.5 and S = 3. What is the resulting norm of the clipped gradient?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 6,
     "pred_page": null,
-    "gold_formula_latex": "\\pi(\\Delta, S) \\triangleq \\Delta \\min\\left(1, \\frac{S}{\\lVert \\Delta \\rVert_2}\\right)",
     "pred_formula_latex": null,
-    "gold_answer": 1.5,
     "pred_answer": null
   },
   {
@@ -2664,13 +1904,9 @@
     "timestamp": null,
     "question_id": "Q211",
     "question_text": "The (\\alpha, \\beta)-preservation property of the shuffle model is expressed as \\Pr(|S_\\sigma \\cap S| \\ge \\alpha |S|) \\ge 1 - \\beta. If a subset S contains |S| = 50 individuals and we choose \\alpha = 0.4, what is the minimum number \\alpha |S| of individuals from S that must remain after shuffling for the condition to hold?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 10,
     "pred_page": null,
-    "gold_formula_latex": "\\Pr\\bigl(|S_\\sigma \\cap S| \\ge \\alpha |S|\\bigr) \\ge 1 - \\beta",
     "pred_formula_latex": null,
-    "gold_answer": 20,
     "pred_answer": null
   },
   {
@@ -2678,13 +1914,9 @@
     "timestamp": null,
     "question_id": "Q212",
     "question_text": "Again using \\Pr(|S_\\sigma \\cap S| \\ge \\alpha |S|) \\ge 1 - \\beta, suppose |S| = 80 and \\alpha = 0.75. What is the threshold \\alpha |S| for the minimum overlap between S and S_\\sigma?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 10,
     "pred_page": null,
-    "gold_formula_latex": "\\Pr\\bigl(|S_\\sigma \\cap S| \\ge \\alpha |S|\\bigr) \\ge 1 - \\beta",
     "pred_formula_latex": null,
-    "gold_answer": 60,
     "pred_answer": null
   },
   {
@@ -2692,13 +1924,9 @@
     "timestamp": null,
     "question_id": "Q213",
     "question_text": "The paper states that the Fashion-MNIST dataset has 10 categories, with 6000 training samples per category. Using the simple counting relation N_{\\text{train}} = 10 \\times 6000, how many total training samples are there in Fashion-MNIST?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 11,
     "pred_page": null,
-    "gold_formula_latex": "N_{\\text{train}} = 10 \\times 6000",
     "pred_formula_latex": null,
-    "gold_answer": 60000,
     "pred_answer": null
   },
   {
@@ -2706,13 +1934,9 @@
     "timestamp": null,
     "question_id": "Q214",
     "question_text": "For Fashion-MNIST, there are 10 categories with 1000 testing samples per category. According to N_{\\text{test}} = 10 \\times 1000, what is the total number of testing samples?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 11,
     "pred_page": null,
-    "gold_formula_latex": "N_{\\text{test}} = 10 \\times 1000",
     "pred_formula_latex": null,
-    "gold_answer": 10000,
     "pred_answer": null
   },
   {
@@ -2720,13 +1944,9 @@
     "timestamp": null,
     "question_id": "Q215",
     "question_text": "The Box dataset described in the paper contains 873 images of intact boxes and 724 images of damaged boxes. Using N_{\\text{total}} = 873 + 724, how many images are there in total?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 11,
     "pred_page": null,
-    "gold_formula_latex": "N_{\\text{total}} = 873 + 724",
     "pred_formula_latex": null,
-    "gold_answer": 1597,
     "pred_answer": null
   },
   {
@@ -2734,13 +1954,9 @@
     "timestamp": null,
     "question_id": "Q216",
     "question_text": "For the Box dataset with a total of 1597 images, the paper uses 90% of the images for training and the remaining 10% for testing. If we compute the number of training images as N_{\\text{train}} = 0.9 \\times 1597 and round to the nearest integer, how many training images are used?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 11,
     "pred_page": null,
-    "gold_formula_latex": "N_{\\text{train}} = 0.9 \\times 1597",
     "pred_formula_latex": null,
-    "gold_answer": 1437,
     "pred_answer": null
   },
   {
@@ -2748,13 +1964,9 @@
     "timestamp": null,
     "question_id": "Q217",
     "question_text": "The privacy budget in the FedShufde framework is given by \\varepsilon = \\frac{E \\cdot C}{\\sigma} \\sqrt{2 \\ln(1.25/\\delta)}. If E = 5 epochs, C = 8 participating edge servers per round, \\sigma = 10, and \\delta = 10^{-3}, what is the resulting privacy budget \\varepsilon (give a numerical value)?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 11,
     "pred_page": null,
-    "gold_formula_latex": "\\varepsilon = \\frac{E \\cdot C}{\\sigma} \\sqrt{2 \\ln\\bigl(1.25/\\delta\\bigr)}",
     "pred_formula_latex": null,
-    "gold_answer": 15.105918130636187,
     "pred_answer": null
   },
   {
@@ -2762,13 +1974,9 @@
     "timestamp": null,
     "question_id": "Q218",
     "question_text": "Using the same privacy budget formula \\varepsilon = \\frac{E \\cdot C}{\\sigma} \\sqrt{2 \\ln(1.25/\\delta)}, let E = 3, C = 12, \\sigma = 8, and \\delta = 10^{-4}. What is the corresponding value of \\varepsilon?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 11,
     "pred_page": null,
-    "gold_formula_latex": "\\varepsilon = \\frac{E \\cdot C}{\\sigma} \\sqrt{2 \\ln\\bigl(1.25/\\delta\\bigr)}",
     "pred_formula_latex": null,
-    "gold_answer": 19.546255367544468,
     "pred_answer": null
   },
   {
@@ -2776,13 +1984,9 @@
     "timestamp": null,
     "question_id": "Q219",
     "question_text": "In the privacy amplification proof, the total privacy loss is bounded using \\varepsilon' = \\sqrt{2 n \\varepsilon^2 \\ln(1/\\delta)}. If n = 10000 users, \\varepsilon = 0.5, and \\delta = 10^{-3}, what is the value of \\varepsilon'?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 10,
     "pred_page": null,
-    "gold_formula_latex": "\\varepsilon' = \\sqrt{2 n \\varepsilon^2 \\ln(1/\\delta)}",
     "pred_formula_latex": null,
-    "gold_answer": 185.84610944249192,
     "pred_answer": null
   },
   {
@@ -2790,13 +1994,9 @@
     "timestamp": null,
     "question_id": "Q220",
     "question_text": "Using the same bound \\varepsilon' = \\sqrt{2 n \\varepsilon^2 \\ln(1/\\delta)}, suppose there are n = 5000 users, with \\varepsilon = 0.3 and \\delta = 10^{-4}. What is \\varepsilon' in this case?",
-    "gold_doc_name": "UAV FedShufde.pdf",
     "pred_doc_name": null,
-    "gold_page": 10,
     "pred_page": null,
-    "gold_formula_latex": "\\varepsilon' = \\sqrt{2 n \\varepsilon^2 \\ln(1/\\delta)}",
     "pred_formula_latex": null,
-    "gold_answer": 91.04562776310878,
     "pred_answer": null
   }
 ]

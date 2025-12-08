@@ -85,7 +85,7 @@ STRICT RULES:
 7. "pred_formula_latex"
 ----------------------------------
 STRICT RULES:
-- MUST be the EXACT LaTeX formula from the document.
+- MUST be the EXACT LaTeX formula from the question or document.
 - MUST NOT simplify, expand, reorder, or rewrite the formula.
 - MUST NOT output equivalent forms.
 - Variable names, subscripts, structure MUST match exactly.
@@ -124,7 +124,7 @@ If multiple questions are given, repeat the object structure inside the array.
 ============================================================
 User Prompt
 ============================================================
-You are given a set of engineering PDF documents and a question.json file.  
+You are given a set of engineering PDF documents and either question.json or question.txt file.  
 Your task is to answer EACH question strictly following the System Prompt rules.  
 The System Prompt specifies the exact JSON schema, output format, LaTeX constraints, unit rules, 
 and the requirement that the final output must be a JSON ARRAY.
