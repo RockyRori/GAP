@@ -11,8 +11,6 @@ GAP System, designed for Assessing MLLMs Reliability on Engineering Formula Reas
 [GAP Prompt](example/prompt.txt)
 
 ## Result
-[GAP metrics.csv](example/Results/gap-metrics.csv)
-
 ![GAP Stacked Bar Chart](example/Results/GAP%20Stacked%20Bar%20Chart.png)
 
 ![GAP Radar Chart](example/Results/GAP%20Radar%20Chart.png)
